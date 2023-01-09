@@ -40,18 +40,21 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="index" class="nav-item nav-link active">Home</a>
-                <a href="#" class="nav-item nav-link">About</a>
-                <a href="#" class="nav-item nav-link">Courses</a>
+                <a href="index" class="nav-item nav-link active">긴급요청 서비스</a>
+                <a href="#" class="nav-item nav-link">방문 서비스</a>
+                <a href="#" class="nav-item nav-link">위탁 서비스</a>
+                <a href="#" class="nav-item nav-link">FAQ</a>
                 <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">마이페이지</a>
                     <div class="dropdown-menu fade-down m-0">
-                        <a href="sample" class="dropdown-item">Our Team</a>
-                        <a href="sample" class="dropdown-item">Testimonial</a>
-                        <a href="sample" class="dropdown-item">404 Page</a>
+                        <a href="fsitterMyInfo" class="dropdown-item">내정보 변경</a>
+                        <a href="sample" class="dropdown-item">계좌 변경</a>
+                        <a href="fsitterMyPet" class="dropdown-item">내 펫 관리</a>
+                         <a href="sample" class="dropdown-item">탈퇴하기</a>
+                          <a href="fsitterMyProfileUpdate" class="dropdown-item">내 프로필 변경</a>
                     </div>
                 </div>
-                <a href="#" class="nav-item nav-link">Contact</a>
+                
             </div>
             <a href="" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Join Now<i class="fa fa-arrow-right ms-3"></i></a>
         </div>
