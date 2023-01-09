@@ -54,6 +54,10 @@ public class FSitterController {
 		return "fsitter/fsitterMyPetUpdate";
 	}
 	
-	
+	@RequestMapping("/fsitter/fsitterPetSitterList")
+	public String fsitterPetSitterList()
+	{
+		return "fsitter/fsitterPetSitterList";
+	}
 	
 }
