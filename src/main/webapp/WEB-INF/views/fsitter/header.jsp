@@ -42,7 +42,7 @@
             <div class="navbar-nav ms-auto p-4 p-lg-0">
                 <a href="index" class="nav-item nav-link active">긴급요청 서비스</a>
                 <a href="#" class="nav-item nav-link">방문 서비스</a>
-                <a href="#" class="nav-item nav-link">위탁 서비스</a>
+                <a href="fsitterPetSitterList#" class="nav-item nav-link">위탁 서비스</a>
                 <a href="#" class="nav-item nav-link">FAQ</a>
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">마이페이지</a>
