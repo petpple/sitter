@@ -91,57 +91,91 @@
 						 	
 						 	<label for="homeTaba">나의 흡연 여부</label><br>
 						 	<div class="radio">
+						 		<label>
 								    <input type="radio" name="homeTaba" id="homeTaba2" value="1">
 								    네, 흡연자입니다.&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;
+								</label>
+								<label>
 								 	<input type="radio" name="homeTaba" id="homeTaba2" value="2">
 								    아니요, 흡연자가 아닙니다.
+								</label> 	
 							</div>
 							<br><br>
 							
 							<label for="homeTaba">가족구성원 흡연 여부</label><br>
 						 	<div class="radio">
+						 		<label>
 								    <input type="radio" name="homeTaba" id="homeTaba2" value="1">
 								    네, 흡연자가 있어요.&emsp;&emsp;&emsp;&emsp;
+								</label>
+								<label>    
 								    <input type="radio" name="homeTaba" id="homeTaba2" value="2">
 								    아니요, 흡연자는 없습니다.
+								</label>    
 							</div>
 							<br><br>
 							
 						 	<label for="homeCate">거주지 유형</label>
 						 	<br>
 						 	<div class="radio">
+						 		<label>
 								    <input type="radio" name="homeCate" id="homeCate2" value="1">
 								    단독주택&emsp;&emsp;
+								</label>
+								<label>    
 								    <input type="radio" name="homeCate" id="homeCate2" value="2">
 								    아파트&emsp;&emsp;
+								</label>
+								<label>    
 								    <input type="radio" name="homeCate" id="homeCate2" value="3">
 								    빌라&emsp;&emsp;
+								</label>
+								<label>
 								    <input type="radio" name="homeCate" id="homeCate2" value="4">
 								    오피스텔&emsp;&emsp;
+								</label>
+								<label>    
 								    <input type="radio" name="homeCate" id="homeCate2" value="5">
 								    원룸&emsp;&emsp;
+								</label>
+								<label>    
 								    <input type="radio" name="homeCate" id="homeCate2" value="6">
 								    공동주택
+								</label>    
 							</div>
 						 	<br><br>
 							
 							<label for="homeCate">거주지 규모</label>
 						 	<br>
 						 	<div class="radio">
+						 		<label>
 								    <input type="radio" name="homeCate" id="homeCate2" value="1">
 								    1~10평&ensp;
+								</label>
+								<label>    
 								    <input type="radio" name="homeCate" id="homeCate2" value="2">
 								    10~20평&ensp;
+								</label>
+								<label>     
 								    <input type="radio" name="homeCate" id="homeCate2" value="3">
 								    21~30평&ensp;
+								</label>
+								<label>     
 								    <input type="radio" name="homeCate" id="homeCate2" value="4">
 								    31~40평&ensp;
+								</label>
+								<label>     
 								    <input type="radio" name="homeCate" id="homeCate2" value="5">
 								    41~50평&ensp;
+								</label>
+								<label>     
 								    <input type="radio" name="homeCate" id="homeCate2" value="6">
 								    51~60평&ensp;
+								</label>
+								<label>     
 								    <input type="radio" name="homeCate" id="homeCate2" value="7">
 								    61평 이상
+								</label>    
 							</div>
 							<br><br>
 							
