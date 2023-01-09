@@ -17,4 +17,10 @@ public class VSitterController {
 	{
 		return "vsitter/sample";
 	}
+	
+	@RequestMapping("vsitter/vsitterSide")
+	public String vsitterSide() {
+		return "vsitter/vsitterSide";
+	}
+
 }
