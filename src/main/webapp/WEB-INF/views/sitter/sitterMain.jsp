@@ -107,7 +107,7 @@
 						<table class="table tab s_font align-middle">
 							<tr>
 								<th>신청번호</th>
-								<th style="width:350px;">내용</th>
+								<th >내용</th>
 								<th>의뢰자</th>
 								<th>결제금액</th>
 							</tr>
@@ -130,7 +130,7 @@
 										<span class="mb_font">루카스</span>
 									</div>
 								</td>
-								<td><span class="reserveInfo">35000원</span></td>
+								<td><span class="reserveInfo">3500330원</span></td>
 							</tr>
 							<tr>
 								<td><span class="reserveInfo">2333323</span></td>
