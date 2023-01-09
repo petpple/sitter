@@ -64,8 +64,33 @@ public class SitterController {
 		return "sitter/sitterMyDrawl";
 	}
 	
-	@RequestMapping("sitter/Test2")
-	public String sitterTest2() {
-		return "sitter/Test2";
+	@RequestMapping("sitter/sitterInfoUsvcWaiting")
+	public String sitterInfoUsvcWaiting() {
+		return "sitter/sitterInfoUsvcWaiting";
+	}
+	
+	@RequestMapping("sitter/sitterInfoUsvcPast")
+	public String sitterInfoUsvcPast() {
+		return "sitter/sitterInfoUsvcPast";
+	}
+	
+	@RequestMapping("sitter/sitterInfoVsvcPast")
+	public String sitterInfoVsvcPast() {            
+		return "sitter/sitterInfoVsvcPast";
+	}
+	
+	@RequestMapping("sitter/sitterInfoVsvcWaiting")
+	public String sitterInfoVsvcWaiting() {
+		return "sitter/sitterInfoVsvcWaiting";
+	}
+	
+	@RequestMapping("sitter/sitterInfoFsvcPast")
+	public String sitterInfoFsvcPast() {
+		return "sitter/sitterInfoFsvcPast";
+	}
+	
+	@RequestMapping("sitter/sitterInfoFsvcWaiting")
+	public String sitterInfoFsvcWaiting() {
+		return "sitter/sitterInfoFsvcWaiting";
 	}
 }

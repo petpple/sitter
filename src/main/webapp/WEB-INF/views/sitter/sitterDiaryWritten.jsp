@@ -56,7 +56,7 @@
 				{
 					changeMonth : true,
 					changeYear : true,
-					dateFormat : "yy-mm-dd",
+					dateFormat : "yy/-mm/dd",
 					dayNames : [ '월요일', '화요일', '수요일', '목요일', '금요일', '토요일',
 							'일요일' ],
 					dayNamesMin : [ '월', '화', '수', '목', '금', '토', '일' ],
@@ -70,7 +70,7 @@
 				{
 					changeMonth : true,
 					changeYear : true,
-					dateFormat : "yy-mm-dd",
+					dateFormat : "yy/mm/dd",
 					dayNames : [ '월요일', '화요일', '수요일', '목요일', '금요일', '토요일',
 							'일요일' ],
 					dayNamesMin : [ '월', '화', '수', '목', '금', '토', '일' ],
@@ -126,7 +126,7 @@
 			date = '0' + date;
 		}
 
-		return year + '-' + month + 1 + '-' + date;
+		return year + '/' + month + 1 + '/' + date;
 	}
 
 	function getMonth(num) {
@@ -143,7 +143,7 @@
 			date = '0' + date;
 		}
 
-		return year + '-' + (month + 1) + '-' + '01';
+		return year + '/' + (month + 1) + '/' + '01';
 	}
 
 	function getEndDate(input) {
@@ -155,10 +155,10 @@
 		var date = temp.getDate();
 
 		if (0 < date && date < 10) {
-			date = '0' + date;
+			date = '0' + dat+e;
 		}
 
-		return year + '-' + (month + 1) + '-' + date;
+		return year + '/' + (month + 1) + '/' + date;
 	}
 
 	function getOneYearBefore() {
@@ -171,7 +171,7 @@
 			date = '0' + date;
 		}
 
-		return year + '-' + month + 1 + '-' + date;
+		return year + '/' + month + 1 + '/' + date;
 	}
 </script>
 </head>

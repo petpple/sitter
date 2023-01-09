@@ -244,10 +244,9 @@
 								</div>
 
 								<div style="margin: 30px; text-align: center;">
-									<button class="btn btn-dark" style="width: 100%;">제출</button>
+									<button type="submit" class="btn showMore shadow-sm" style="width: 100%;">제출</button>
 								</div>
 							</form>
-
 
 						</div>
 					</div>

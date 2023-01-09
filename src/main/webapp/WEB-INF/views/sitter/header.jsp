@@ -40,8 +40,8 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="index" class="nav-item nav-link active">Home</a>
-                <a href="#" class="nav-item nav-link">About</a>
+                <a href="http://localhost:8093/sitter/sitterMain" class="nav-item nav-link active">펫시터 메인</a>
+                <a href="http://localhost:8093/sitter/sitterDiaryPetChoice" class="nav-item nav-link">일지</a>
                 <a href="#" class="nav-item nav-link">Courses</a>
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
