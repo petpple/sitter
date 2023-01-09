@@ -36,18 +36,18 @@
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     
     
-    <!--  -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
-	<!-- <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script> -->
-	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
-	<link rel="stylesheet" href="/css/fsitter/fsitterMyProfile.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+	<link rel="stylesheet" href="/css/fsitter/fsitterMyPet.css">
 	<link rel="stylesheet" href="/css/main.css">
     
+    
+   
 
 <script type="text/javascript">
 $(document).ready(function () {
     $.datepicker.monthpicker = {
-    	maxDate: 0,
+    	minDate: 0,
         closeText: '닫기',
         nextText : '다음 달',
         prevText : '이전 달',
@@ -67,7 +67,7 @@ $(document).ready(function () {
         showOn: 'both',
         // buttonText: "달력",
         showButtonPanel: false,
-        dateFormat: 'yy-mm-dd',          
+        dateFormat: 'yy/mm/dd',          
         yearRange: "-10:+0",
 };
       
@@ -103,12 +103,33 @@ $.datepicker.setDefaults($.datepicker.monthpicker);
       $(".month_picker").datepicker(datepicker_default);
 });
 
+$(function() { // 파일 업로드
+    $('#img_select1').change(function() {
+       setImageFromFile(this, '#preview1');
+    });
+    $('#img_select2').change(function() {
+       setImageFromFile(this, '#preview2');
+    });
+    $('#img_select3').change(function() {
+       setImageFromFile(this, '#preview3');
+    });
+ });
+ //파일 업로드
+ function setImageFromFile(input, expression) {
+    if (input.files && input.files[0]) {
+       var reader = new FileReader();
 
-</script> 
+       reader.onload = function(e) {
+          $(expression).attr('src', e.target.result);
+       }
+       reader.readAsDataURL(input.files[0]);
+    }
+ }
+</script>
     
     
-    <!-- 카카오 맵 -->
-    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=267276c330ec0b1c55c55bf8f203426d"></script>
+<!-- 카카오 맵 -->
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=267276c330ec0b1c55c55bf8f203426d"></script>
 
 <script type="text/javascript">
 
@@ -126,17 +147,13 @@ $.datepicker.setDefaults($.datepicker.monthpicker);
 		map = new kakao.maps.Map(container, options);				
 	}
 </script>
+    
 
-<script type="text/javascript">
-$(document).ready(function(){
-  $('#multiselect_certificate').multiselect();        
-});
-</script>
 
 
 </head>
 
-<body>
+<body onload="initialize()">
     <!-- Spinner Start -->
     <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
         <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
@@ -161,7 +178,19 @@ $(document).ready(function(){
        	
 						<div class="box_miMyPr1">
 							<div class="form-inline">
-								<img src="/images/fsitter/h4.svg" class="svgImg3">
+								<!--<div class="">
+									 <img src="/images/fsitter/h4.svg"
+										style="width: 60px; margin-right: 10px;"><span
+										class="mb_font">루카스</span> <span class="l_font">의 일지</span>
+								</div> -->
+								
+								<div class="size_fix">
+	                              <img src="/images/fsitter/h4.svg" id="preview1" /><br> <label
+	                                 for="img_select1" class="input-file-button">사진 첨부</label> <input
+	                                 type="file" id="img_select1" style="display: none;" />
+	                           
+							
+								<!-- <img src="/images/fsitter/h4.svg" class="svgImg3"> -->
 									 <div class="form-group m_font" id="MyPro1">
 									 	<div class="lg-3 row"> 
 										     <div class="col-lg-5" style="margin-left: -10px;">
@@ -169,21 +198,21 @@ $(document).ready(function(){
 										     </div>
 										     	<label for="location" class="col-lg-2 col-form-label">펫시터</label>
 										     <div class="col-lg-3">
-										      	<input type="text" class="form-control"  placeholder="다나카">
+										      	<input type="text" class="form-control"  placeholder="다나카" Readonly>
 										     </div>
 										    	<label for="sitterName3" class="col-lg-2 col-form-label" >님</label>
 										    	
 										    	<input type="text" class="form-control form-control-lg" id="loc3" placeholder="내 아이를 돌보듯 따뜻하고 편안하게">
 										</div><!-- <div class="lg-3 row"> -->							 	
 								 </div>
-								 
+								 </div>
 							</div><!--end <form class="form-inline">-->
 						</div><!--end <div class="box_mi">-->
 					
 						<div class="box_miMyPr2 ">
 							<div class="lg-3 row">
 							    <div class="col-lg-2">
-							      <input type="text" class="form-control"  placeholder="다나카">
+							      <input type="text" class="form-control"  placeholder="다나카" Readonly>
 							    </div>
 							    <label for="sitterName2" class="col-lg-5 col-form-label" >펫시터님을 소개합니다.</label>
 							</div>
@@ -195,7 +224,7 @@ $(document).ready(function(){
 			
 						<div class="box_miMyPr3">
 							<label for="sitter_name m_font">자격증 및 교육 수료</label>
-							<select class="form-control" multiple="multiple" id="certificate">
+							<select class="form-control" size="10"  multiple="multiple" id="certificate">
 								  <option value="0" selected>-- 자격증 선택 --</option>
 								  <option value="1">반려견지도사</option>
 								  <option value="2">도그쇼 심사위원</option>
@@ -223,10 +252,11 @@ $(document).ready(function(){
 						</div><!-- <div class="box_miMyPr3"> -->
 						
 					</div>
+					
 					<div class="col-lg-4 row" style="margin-left: 20px; margin-top: 38px;">
-				        <div class ="box_mypi2">
+				        <div class ="box_mypi2 inline" style="height: auto;">
 				            <span>언제 펫시터가 필요한가요?</span>
-					            <form class=" lg-3 row inline"> 
+					           <form class=" lg-3 row inline"> 
 					            	<div class="form-group col-lg-5">  
 								 		<input type="text"  id="datepicker" class="form-control">
 								 	</div> 
@@ -234,7 +264,7 @@ $(document).ready(function(){
 								 	<div class="form-group col-lg-5">  
 								 		<input type="text"  id="datepicker2" class="form-control" style="margin-left: -20px;">
 								 	</div>	
-							           
+
 							            <!-- 생년월일 datepicker  -->
 										<script type="text/javascript">
 											$("#datepicker").datepicker();
@@ -243,7 +273,7 @@ $(document).ready(function(){
 										<script type="text/javascript">
 											$("#datepicker2").datepicker();
 										</script>
-							    </form>     
+							    </form>       
 				            <br><br>
 				            
 				            <span>체크인 시간&emsp;&emsp;&emsp;&emsp;&emsp;</span><span>&emsp;&emsp;&emsp;체크아웃 시간</span>
@@ -296,6 +326,20 @@ $(document).ready(function(){
 					            	<option value="1">바둑이 </option>
 					            	<option value="2">똘이 </option>
 					            </select>
+					            <br><br>
+					            
+					            <!-- 이부분은 날짜를 선택하고 동물을 고르면 자동으로 계산되어야 하는 부분 -->
+					            <span>합계요금</span>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;	<span>85,000</span><span>원</span>
+			        			<br>
+			        			<span>─────────────────────</span>
+			        			<br>
+			        			<span>타임케어 비용</span><span>/소형</span><span>2</span>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; <span>85,000</span><span>원</span>
+			        			<br><br>
+			        			
+			        			<div class="col text-center">
+				                    <button type="button" class="but btn" style="background-color: #FE5C17; color: white;"
+				                    onclick="location.href='http://localhost:8093/fsitter/fsitterMyProfileUpdate'">예약요청</button><!-- 주소는 추후 수정예정 -->
+				                </div>
 			        		</div>
 			        		
 			        		<div class="box_mypi2" style="height: 200px;">돌봄가능 펫 크기
@@ -313,18 +357,18 @@ $(document).ready(function(){
 			        		
 			        		
 			        		
-			        		<div class="box_mypi2" >
+			        		<div class="box_mypi2">
 			        		<span>펫시터님 위치</span><br><br>
 			        		<span>서초구 반포동 신반포역에서 도보로 10분</span>
 			        		<div id="map" style="width: 200px; height: 400px;" ></div>
 			        		</div>
 			        		
 			        		<!-- 펫시터 프로필출력할때 사용할 부분 -->
-			        		<div class="box_mypi2"style="height: 600px;">
+			        		<div class="box_mypi4"style="height: 500px;">
 			        		<table class="table">
 								<thead>
 									<tr>
-								    	<th colspan="5" scope="col">요금</th>
+								    	<th width="20%;" scope="col">요금표</th>
 								    	<th scope="col">기본 요금(15,000)</th>
 								    	<th scope="col">시간당(2,000)</th>
 								    	<th scope="col">일(50,000)</th>
@@ -332,61 +376,67 @@ $(document).ready(function(){
 								</thead>
 								<tbody>
 									<tr>
-									    <th colspan="5"scope="row">소</th>
+									    <th scope="row">소형견</th>
 									    <td></td>
 									    <td></td>
 									    <td></td>
 								  	</tr>
 								  	<tr>
-									    <th colspan="5"scope="row">중</th>
+									    <th scope="row">중형견</th>
 									    <td>+10,000</td>
 									    <td></td>
 									    <td></td>
 								  	</tr>
 								  	<tr>
-									    <th colspan="5"scope="row">대</th>
-									    <td colspan="5">+20,000</td>
+									    <th scope="row">대형견</th>
+									    <td>+20,000</td>
+									    <td></td>
 									    <td></td>
 								  	</tr>
 								  	<tr>
 								  	</tr>
 								  	<tr>
-								  		<th colspan="5"  scope="row" >등급별 금액 </th>
+								  		<th scope="row" >등급별</th>
+								  		<td></td>
 								  		<td></td>
 								  		<td></td>
 								  	</tr>	
 								  	
 								  	<tr>
-								  		<th colspan="5" scope="row">새싹 </th>
-								  		<td colspan="5">-5,000</td>
+								  		<th scope="row">새싹</th>
+								  		<td> -5,000</td>
+								  		<td></td>
 								  		<td></td>
 								  	</tr>
 								  	<tr>
-								  		<th colspan="5" scope="row">브론즈 </th>
-								  		<td colspan="5"></td>
+								  		<th scope="row">브론즈</th>
+								  		<td></td>
+								  		<td></td>
 								  		<td></td>
 								  	</tr>
 								  	<tr>
-								  		<th colspan="5" scope="row">실버 </th>
-								  		<td colspan="5">+5,000</td>
+								  		<th scope="row">실버</th>
+								  		<td >+5,000</td>
+								  		<td></td>
 								  		<td></td>
 								  	</tr>
 								  	<tr>
-								  		<th colspan="5" scope="row">골드 </th>
-								  		<td colspan="5">+10,000</td>
+								  		<th scope="row">골드</th>
+								  		<td >+10,000</td>
+								  		<td></td>
 								  		<td></td>
 								  	</tr>
+								  	
 								  	<tr>
-								  	</tr>
-								  	<tr>
-								  		<th colspan="5" scope="row">마리당</th>
+								  		<th scope="row">마리당</th>
 								  		<td>-10,000</td>
 								  		<td></td>
 								  		<td>-10,000</td>
 								  	</tr>
 								  	<tr>
-								  		<th colspan="5"  scope="row" >긴급 </th>
-								  		<td>+20,000</td>
+								  		<th scope="row" >긴급</th>
+								  		<td >+20,000</td>
+								  		<td></td>
 								  		<td></td>
 								  	</tr>
 								</tbody>
@@ -397,7 +447,7 @@ $(document).ready(function(){
                 </div>
             </div>
         </div>
-    </div>
+   
     <!-- 404 End -->
 
 	<div>
@@ -405,7 +455,7 @@ $(document).ready(function(){
 	</div>
 
     <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/library/wow/wow.min.js"></script>
     <script src="/library/easing/easing.min.js"></script>

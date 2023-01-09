@@ -65,7 +65,7 @@ $(document).ready(function () {
         showOn: 'both',
         // buttonText: "달력",
         showButtonPanel: false,
-        dateFormat: 'yy-mm',          
+        dateFormat: 'yy/mm/dd',          
         yearRange: "-10:+0",
 };
       
@@ -102,6 +102,7 @@ $.datepicker.setDefaults($.datepicker.monthpicker);
 });
 
 
+
 </script>
     
 </head>
@@ -128,7 +129,7 @@ $.datepicker.setDefaults($.datepicker.monthpicker);
                 
                     <div class="IMG1" >
 					<img src="/images/fsitter/2.svg" class="svgImg2">
-					<span class="font h_font">내 펫 관리</span>
+					<span class="font h_font">내 펫 추가</span>
 		       		</div>
 		       		
 		       		<div class="box_miInfo">
@@ -144,10 +145,14 @@ $.datepicker.setDefaults($.datepicker.monthpicker);
 							
 								<label for="kinds">종류</label><br>
 							 	<div class="radio">
-								    <input type="radio" name="kinds" id="kinds" value="1">
-								    강아지&emsp;&emsp;&emsp;
-								 	<input type="radio" name="kinds" id="kinds" value="2">
-								    고양이
+							 		<label>
+								    	<input type="radio" name="kinds" id="kinds" value="1">
+								    	강아지&emsp;&emsp;&emsp;
+								 	</label>
+								 	<label>
+								 		<input type="radio" name="kinds" id="kinds" value="2">
+								    	고양이
+								    </label>	
 								</div>
 								<br><br>
 								
@@ -159,17 +164,73 @@ $.datepicker.setDefaults($.datepicker.monthpicker);
 							 	
 							 	<label for="gender">성별</label><br>
 							 	<div class="radio">
-								    <input type="radio" name="gender" id="gender" value="1">
-								    남&emsp;&emsp;&emsp;&emsp;&emsp;
-								    <input type="radio" name="gender" id="gender" value="2">
-								    여
+							 		<label>
+								    	<input type="radio" name="gender" id="gender" value="1">
+								    	남&emsp;&emsp;&emsp;&emsp;&emsp;
+								    </label>
+								    <label>
+								    	<input type="radio" name="gender" id="gender" value="2">
+								    	여
+								    </label>	
 								</div>
 								<br><br>
 								
-								<label for="kind">품종</label><br>
-							   		<label>
-							   		<input type="text" class="form-control" id="kind" placeholder="예) 말티즈">
-							 		</label>
+								<!-- 종류에서 강아지 고르면 이게 나오게 해야함 -->
+								<label for="dog">강아지 품종</label><br>
+									<label>
+							   		<select class="form-select" name="dog" style="text-align: center;">
+										  <option selected>-- 강아지 품종 --</option>
+										  <option value="1">시베리아허스키</option>
+										  <option value="2">푸들</option>
+										  <option value="3">셰퍼드</option>
+										  <option value="4">알래스칸 맬러뮤트</option>
+										  <option value="5">도베르만</option>
+										  <option value="6">리트리버</option>
+										  <option value="7">베들링턴 테이러</option>
+										  <option value="8">그레이 하운드</option>
+										  <option value="9">웰시코기</option>
+										  <option value="10">사모예드</option>
+										  <option value="11">시바이누</option>
+										  <option value="12">스피츠</option>
+										  <option value="13">슈나우저</option>
+										  <option value="14">비숑프리제</option>
+										  <option value="15">시츄</option>
+										  <option value="16">잭 러셀 테리어</option>
+										  <option value="17">포메라니안</option>
+										  <option value="18">미니어처 핀셔</option>
+										  <option value="19">파피용</option>
+										  <option value="20">요크셔 테리어</option>
+										  <option value="21">말티즈</option>
+										  <option value="22">닥스훈트</option>
+										  <option value="23">치와와</option>
+										  <option value="24">퍼그</option>
+										  <option value="25">프렌치불독</option>
+										  <option value="26">꼬똥 드 툴레아</option>
+										  <option value="40">기타</option>
+									</select>
+									</label>
+							 	<br><br>
+							 	<!-- 종류에서 고양이 고르면 이게 나오게 해야함 -->
+							 	<label for="cat">고양이 품종</label><br>
+									<label>
+							   		<select class="form-select" name="cat" style="text-align: center;">
+										  <option selected>-- 고양이 품종 --</option>
+										  <option value="27">페르시안고양이</option>
+										  <option value="28">러시안블루</option>
+										  <option value="29">아메리칸숏헤어</option>
+										  <option value="30">브리티쉬숏헤어</option>
+										  <option value="31">벵갈</option>
+										  <option value="32">아비시니안</option>
+										  <option value="33">스코티시폴드</option>
+										  <option value="34">스핑크스</option>
+										  <option value="35">소말리</option>
+										  <option value="36">먼치킨</option>
+										  <option value="37">랙돌</option>
+										  <option value="38">터키쉬앙고라</option>
+										  <option value="39">노르웨이 숲</option>
+										  <option value="41">기타</option>
+									</select>
+								</label>
 							 	<br><br>
 							 	
 							 	<label for="datepicker">생년월일</label><br>
@@ -191,10 +252,14 @@ $.datepicker.setDefaults($.datepicker.monthpicker);
 							 	
 							 	<label for="neutere">중성화</label><br>
 							 	<div class="radio">
-								    <input type="radio" name="neutere" id="neutere" value="1">
-								    예&emsp;&emsp;&emsp;&emsp;&emsp;
-								    <input type="radio" name="neutere" id="neutere" value="2">
-								    아니요
+							 		<label>
+									    <input type="radio" name="neutere" id="neutere" value="1">
+									    예&emsp;&emsp;&emsp;&emsp;&emsp;
+									</label>
+									<label>    
+								    	<input type="radio" name="neutere" id="neutere" value="2">
+								   	 	아니요
+								   	</label>
 								</div>
 								<br><br>
 								
@@ -227,7 +292,7 @@ $.datepicker.setDefaults($.datepicker.monthpicker);
 	</div>
 
     <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+   <!--  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/library/wow/wow.min.js"></script>
     <script src="/library/easing/easing.min.js"></script>
