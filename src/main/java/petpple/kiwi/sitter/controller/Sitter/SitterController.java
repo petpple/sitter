@@ -93,4 +93,5 @@ public class SitterController {
 	public String sitterInfoFsvcWaiting() {
 		return "sitter/sitterInfoFsvcWaiting";
 	}
+	
 }
