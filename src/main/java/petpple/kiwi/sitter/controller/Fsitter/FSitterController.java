@@ -60,4 +60,10 @@ public class FSitterController {
 		return "fsitter/fsitterPetSitterList";
 	}
 	
+	@RequestMapping("/fsitter/fsitterCal")
+	public String fsitterCal()
+	{
+		return "fsitter/fsitterCal";
+	}
+	
 }

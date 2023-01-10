@@ -101,7 +101,28 @@ $.datepicker.setDefaults($.datepicker.monthpicker);
       $(".month_picker").datepicker(datepicker_default);
 });
 
+$(function() { // 파일 업로드
+    $('#img_select1').change(function() {
+       setImageFromFile(this, '#preview1');
+    });
+    $('#img_select2').change(function() {
+       setImageFromFile(this, '#preview2');
+    });
+    $('#img_select3').change(function() {
+       setImageFromFile(this, '#preview3');
+    });
+ });
+ //파일 업로드
+ function setImageFromFile(input, expression) {
+    if (input.files && input.files[0]) {
+       var reader = new FileReader();
 
+       reader.onload = function(e) {
+          $(expression).attr('src', e.target.result);
+       }
+       reader.readAsDataURL(input.files[0]);
+    }
+ }
 
 </script>
     
@@ -133,10 +154,16 @@ $.datepicker.setDefaults($.datepicker.monthpicker);
 		       		</div>
 		       		
 		       		<div class="box_miInfo">
-						<label for="homeTaba">사진 등록</label><br>
-							<input type="file" class="real-upload" accept="image/*" required multiple>
+		       		
+		       			<div class="size_fix">
+                              <img src="/images/sitter/no_img.png" id="preview1" style="width: 100px; height=100px; object-fit: cover;"/> 
+                              <label for="img_select1" class="input-file-button">사진 첨부</label> 
+	                          <input type="file" id="img_select1" style="display: none;" />
+		       		
+						<!-- <label for="photo">사진 등록</label><br>
+							<input type="file" class="real-upload" accept="image/*" required multiple> -->
 					</div>
-        	
+        			</div>
 		        	
 		        	
 		        	<div class="box_miInfo">
