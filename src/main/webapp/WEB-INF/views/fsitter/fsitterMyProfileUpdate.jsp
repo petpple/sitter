@@ -141,10 +141,26 @@ $(function() { // 파일 업로드
 		options =
 		{
 			center: new kakao.maps.LatLng(37.556556, 126.919550),	
-			level: 3,
+			level: 5,
 		};
 		
-		map = new kakao.maps.Map(container, options);				
+		map = new kakao.maps.Map(container, options);
+		
+		 circle = new kakao.maps.Circle({
+		    center : new kakao.maps.LatLng(37.556556, 126.919550),  // 원의 중심좌표 입니다 
+		    radius: 250, // 미터 단위의 원의 반지름입니다 
+		    strokeWeight: 2, // 선의 두께입니다 
+		    strokeColor: '#75B8FA', // 선의 색깔입니다
+		    strokeOpacity: 0.7, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+		    strokeStyle: 'line', // 선의 스타일 입니다
+		    fillColor: '#CFE7FF', // 채우기 색깔입니다
+		    fillOpacity: 0.7  // 채우기 불투명도 입니다   
+		}); 
+		 
+		 
+		// 지도에 원을 표시합니다 
+		 circle.setMap(map); 
+
 	}
 </script>
     
@@ -177,21 +193,10 @@ $(function() { // 파일 업로드
 			       	</div>
        	
 						<div class="box_miMyPr1">
-							<div class="form-inline">
-								<!--<div class="">
-									 <img src="/images/fsitter/h4.svg"
-										style="width: 60px; margin-right: 10px;"><span
-										class="mb_font">루카스</span> <span class="l_font">의 일지</span>
-								</div> -->
-								
-								<div class="size_fix">
-	                              <img src="/images/fsitter/h4.svg" id="preview1" /><br> <label
-	                                 for="img_select1" class="input-file-button">사진 첨부</label> <input
-	                                 type="file" id="img_select1" style="display: none;" />
-	                           
-							
-								<!-- <img src="/images/fsitter/h4.svg" class="svgImg3"> -->
-									 <div class="form-group m_font" id="MyPro1">
+								<!-- <div class="size_fix inline"> -->
+	                              <!-- <img src="/images/fsitter/h4.svg" id="preview1" />  -->
+									<img src="/images/fsitter/h4.svg" class="svgImg3" id="preview1">
+									<!--  <div class="form-group m_font" id="MyPro1"> -->
 									 	<div class="lg-3 row"> 
 										     <div class="col-lg-5" style="margin-left: -10px;">
 										      	<input type="text" class="form-control" id="location" placeholder="서울시 마포구 합정동" >
@@ -203,10 +208,15 @@ $(function() { // 파일 업로드
 										    	<label for="sitterName3" class="col-lg-2 col-form-label" >님</label>
 										    	
 										    	<input type="text" class="form-control form-control-lg" id="loc3" placeholder="내 아이를 돌보듯 따뜻하고 편안하게">
-										</div><!-- <div class="lg-3 row"> -->							 	
-								 </div>
-								 </div>
-							</div><!--end <form class="form-inline">-->
+										</div><!-- <div class="lg-3 row"> -->
+										
+											<label
+	                               			  for="img_select1" class="input-file-button" style="margin-left: -8px; ">사진 첨부</label> 
+	                                		 <input type="file" id="img_select1" style="display: none;" />
+																	 	
+								 <!-- </div> -->
+								
+							<!-- </div> --><!--end <form class="form-inline">-->
 						</div><!--end <div class="box_mi">-->
 					
 						<div class="box_miMyPr2 ">
@@ -251,8 +261,134 @@ $(function() { // 파일 업로드
 								</select>
 						</div><!-- <div class="box_miMyPr3"> -->
 						
+						<div class="box_miMyPr3">
+							<label for="sitter_name m_font">돌봄 가능 펫 크기</label>
+							<br><br>
+								<div class="radio">
+								    <input type="radio" name="petsize" id="petsize" value="1">
+								    소형견 (7kg 미만)&emsp;&emsp;&emsp;
+								    <input type="radio" name="petsize" id="petsize" value="2">
+								    중형견 (7 ~ 14.9kg)&emsp;&emsp;&emsp;
+								    <input type="radio" name="petsize" id="petsize" value="3">
+								    대형견 (15kg 이상)
+							</div>
+						</div>
+						
+						
+						
+						<br>
+						<div class="col text-center">
+		                    <button type="button" class="but btn" style="background-color: #FE5C17; color: white;"
+		                    onclick="location.href='http://localhost:8093/fsitter/fsitterMyProfileUpdate'">수정하기</button><!-- 주소는 추후 수정예정 -->
+		                </div>
+		                <br>
+		                
+		                <div class="box_miMyPr5 inline">
+		                	<div class="petreview">
+		                		<h2 class="petreviewTitle">펫시터 후기 24개</h2>
+				                	<div class="petstar">
+					                	<img width="18" height="18" src="/static/images/common/star_1.png">
+					                	<img width="18" height="18" src="/static/images/common/star_1.png">
+					                	<img width="18" height="18" src="/static/images/common/star_1.png">
+					                	<img width="18" height="18" src="/static/images/common/star_1.png">
+					                	<img width="18" height="18" src="/static/images/common/star_1.png">
+				                	</div>
+		                	</div>
+		                	
+		                	
+		                	<!-- 후기 사진 부분 -->
+		                	<div class="reviewPhoto">
+		                		<div class="reviewPhotos">
+		                			<img width="139" height="139" src="https://petplanet.cdn.ntruss.com/resized/review/1dc77e2abae74ce9969db0dfd4d723ec.jpg" style="object-fit: cover;">
+		                		</div>
+		                		<div class="reviewPhotos">
+		                			<img width="139" height="139" src="https://petplanet.cdn.ntruss.com/resized/review/4091f1ce922843f288d9e960876c712e.jpg" style="object-fit: cover;">
+		                		</div>
+		                		<div class="reviewPhotos">
+		                			<img width="139" height="139" src="https://petplanet.cdn.ntruss.com/resized/review/83ca435152004627a54514e82e00de53.jpg" style="object-fit: cover;">
+		                		</div>
+		                		<div class="reviewPhotos">
+		                			<img width="139" height="139" src="https://d1cd60iwvuzqnn.cloudfront.net/resized/review/b07039330b2748e9a6b7305117ebd113.jpg" style="object-fit: cover;">
+				                		<div style="display: flex; position: absolute; inset: 0px; width: 139px; height: 139px; align-items: center; justify-content: center; background-color: rgba(0, 0, 0, 0.59); border-radius: 3px;">
+				                			<p style="font-size: 17px; letter-spacing: 0.5px; line-height: 25px; color: white;">+19</p>
+				                		</div>
+		                		</div>
+	                		</div>
+		                	
+		                	<div class="line">
+		                	
+		                	<!-- 사용자 후기 -->
+		                	<div class="reviewForm">
+		                		<div class="reviewFormTitle">
+		                			<img width="50" height="50" src="https://d1cd60iwvuzqnn.cloudfront.net/resized/pet/9ae4c0dc2721462ba04a9047a96e0b9c.jpg" style="object-fit: cover; border-radius: 50%;">
+		                				<div class="reviewImgIdDate">
+		                					<p class="reviewId">C***************N</p>
+		                					<p class="reviewDate">2023년 1월 1일</p>
+		                				</div>
+		                		</div>
+		                		<p class="petHostReview" >태어나 처음으로 떨어져야 하는 울애기
+								무려 4일이나 떨어져야해서 걱정이 너무 많았어요 소심하고 낯가리고 덜덜떠는 겁쟁이라 여기저기 알아보다 시터님을 알게되었어요
+								사실 맡기고 나서도 너무 걱정되서 그날 밤은 잠을 잘 못잤어요 그런데 써주시는 일지의 사진과 동영상들을 보니 잘지내고 있는게 느껴지더라구요
+								저보다 더 밥도 잘 먹여주시는거 같고 추위를 많이 타서 전 산책을 못시켰었는데 품에 안고 산책도 시켜주시고
+								저한테만 보여줄 줄 알았던 애교도 부리고 있더라구요😅 사실 그동안 맡길곳이 없어 강아지가 힘들어도 끌고 다녔는데 좋은분 만난 것 같아 너무 든든해졌어요
+								너무너무 감사했습니다 다음번에도 잘 부탁드릴께요❤️</p>
+								<!-- 이미지 -->
+								<div class="petImgs">
+									<img class="petImg" src="https://petplanet.cdn.ntruss.com/resized/review/1dc77e2abae74ce9969db0dfd4d723ec.jpg" style="border-radius: 2px; object-fit: cover; margin-right: 9px; user-select: none; cursor: pointer;">
+									<img class="petImg" src="https://petplanet.cdn.ntruss.com/resized/review/4091f1ce922843f288d9e960876c712e.jpg" style="border-radius: 2px; object-fit: cover; margin-right: 9px; user-select: none; cursor: pointer;">
+									<img class="petImg" src="https://petplanet.cdn.ntruss.com/resized/review/83ca435152004627a54514e82e00de53.jpg" style="border-radius: 2px; object-fit: cover; margin-right: 9px; user-select: none; cursor: pointer;">
+								</div>
+							</div>
+							
+							<div class="reviewForm">
+								<div class="reviewFormTitle">
+									<img width="50" height="50" src="https://d1cd60iwvuzqnn.cloudfront.net/resized/pet/a74f101652134233a3efbabccac2eaea.jpg" style="object-fit: cover; border-radius: 50%;">
+										<div class="reviewImgIdDate">
+											<p class="reviewId">김*경</p>
+											<p class="reviewDate">2022년 12월 11일</p>
+										</div>
+								</div>
+									<p class="petHostReview">1박 2일 동안 밀크를 사랑으로 잘 돌봐주셔서 깊은 감사를 드립니다. 사회성이 부족하여 평소 산책을 잘 못하는데 시터님께서 산책도 시켜주시고 재미있게 놀이도 해 주셨어요. 예쁜 사진과 함께 일지도 자주 올려주셔서 걱정없이 잘 다녀올 수 있었습니다. 
+									감사드립니다~~</p>
+								<!-- 이미지 -->	
+								<div class="petImgs">
+									<img class="petImg" src="https://d1cd60iwvuzqnn.cloudfront.net/resized/review/b07039330b2748e9a6b7305117ebd113.jpg" style="border-radius: 2px; object-fit: cover; margin-right: 9px; user-select: none; cursor: pointer;">
+									<img class="petImg" src="https://d1cd60iwvuzqnn.cloudfront.net/resized/review/a454b97448cb4216800cfb68ce24bb19.jpg" style="border-radius: 2px; object-fit: cover; margin-right: 9px; user-select: none; cursor: pointer;">
+								</div>
+							</div>
+							
+							<div class="reviewForm">
+								<div class="reviewFormTitle">
+									<img width="50" height="50" src="https://d1cd60iwvuzqnn.cloudfront.net/resized/pet/7c67b3121ae440f7937e9afcd2cf6dc8.jpg" style="object-fit: cover; border-radius: 50%;">
+										<div class="reviewImgIdDate"">
+											<p class="reviewId">김*희</p>
+											<p class="reviewDate">2022년 11월 13일</p>
+										</div>
+								</div>
+								<p class="petHostReview">펫시터님 덕분에 정말 안심하고 다녀왔습니다. 강아지와 떨어져 본 적이 없어서 처음에 너무 걱정했는데, 일지도 꼼꼼히 적어 보내주셨고  다녀왔더니 너무 잘 지내고 있어서 깜짝 놀랐어요. 이틀동안 정말 감사했습니다.</p>
+								<div class="petImgs">
+									<img width="90" height="90" src="https://d1cd60iwvuzqnn.cloudfront.net/resized/review/0eec0d8deb8b4b30bb40a93e50739dea.jpg" style="border-radius: 2px; object-fit: cover; margin-right: 9px; user-select: none; cursor: pointer;">
+									<img width="90" height="90" src="https://d1cd60iwvuzqnn.cloudfront.net/resized/review/97532cf2a8ca40448475fb305c513a7e.jpg" style="border-radius: 2px; object-fit: cover; margin-right: 9px; user-select: none; cursor: pointer;">
+								</div>
+							</div>
+							
+							<!-- 아직 정리 안됨 -->
+							<div style="display: flex; align-items: center; justify-content: center; height: 50px; border-radius: 25px; border: 1px solid rgb(129, 137, 155); margin-bottom: 100px; user-select: none; cursor: pointer; margin-top: 12px;">
+								<p style="font-size: 14px; letter-spacing: -0.2px; line-height: 20px; color: rgb(56, 60, 72);">펫시터 후기 더보기</p>
+							</div>
+							</div>
+		                	
+		                	
+		                </div><!-- <div class="box_miMyPr5 inline"> -->
+		                
 					</div>
 					
+					
+					
+					
+					
+					
+					<!-- 오른쪽 바 -->
 					<div class="col-lg-4 row" style="margin-left: 20px; margin-top: 38px;">
 				        <div class ="box_mypi2 inline" style="height: auto;">
 				            <span>언제 펫시터가 필요한가요?</span>
@@ -274,7 +410,7 @@ $(function() { // 파일 업로드
 											$("#datepicker2").datepicker();
 										</script>
 							    </form>       
-				            <br><br>
+				            <br>
 				            
 				            <span>체크인 시간&emsp;&emsp;&emsp;&emsp;&emsp;</span><span>&emsp;&emsp;&emsp;체크아웃 시간</span>
 				            <form class=" lg-3 row inline"> 
@@ -318,7 +454,7 @@ $(function() { // 파일 업로드
 								            </select>
 								 	</div><!-- <div class="form-group col-lg-5">  -->
 				            	</form><!-- <form class=" lg-3 row inline"> --> 
-				            <br><br>
+				            <br>
 				            
 				            	<span>맡기시는 반려동물</span>
 					            <select class="form-control" style="text-align: center;">
@@ -355,12 +491,19 @@ $(function() { // 파일 업로드
 							</div>
 			        		</div>
 			        		
+			        		<div class="box_mypi2" style="height: 460px;">예약 가능 날짜
+			        		<br><br>
+						 	<div id="test">
+								<c:import url="http://localhost:8093/fsitter/fsitterCal"></c:import>
+							</div>
+			        		</div>
+			        		
 			        		
 			        		
 			        		<div class="box_mypi2">
 			        		<span>펫시터님 위치</span><br><br>
-			        		<span>서초구 반포동 신반포역에서 도보로 10분</span>
-			        		<div id="map" style="width: 200px; height: 400px;" ></div>
+			        		<!-- <span>서초구 반포동 신반포역에서 도보로 10분</span> -->
+			        		<div id="map" style="width: 325px; height: 270px;"></div>
 			        		</div>
 			        		
 			        		<!-- 펫시터 프로필출력할때 사용할 부분 -->
