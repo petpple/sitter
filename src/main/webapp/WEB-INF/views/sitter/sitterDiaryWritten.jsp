@@ -207,7 +207,7 @@
 						<li class="nav-item"><a href="/sitter/sitterDiaryPetChoice"
 							class="nav-link diary_inactive font_black">작성 가능한 일지</a></li>
 						<li class="nav-item"><a href="/sitter/sitterDiaryWritten"
-							class="nav-link active" style="color: #FE5C17;">작성 한 일지</a></li>
+							class="nav-link active" style="color: #e56d00;">작성 한 일지</a></li>
 					</ul>
 					<div class="box_mi">
 						<div class="box_diary">
