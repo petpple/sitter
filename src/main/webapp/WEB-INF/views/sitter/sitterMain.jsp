@@ -91,8 +91,8 @@
 
 						<div>
 							<button type="button" class="btn btn-danger">의뢰자 노쇼</button>
-							<a href="http://localhost:8093/sitter/sitterDiaryPetChoice"><button type="button" class="btn"
-								style="background-color: #FE5C17; color: white;">일지 쓰기</button></a>
+							<a href="http://localhost:8093/sitter/sitterDiaryPetChoice"><button type="button" class="btn btn-primary"
+								style="">일지 쓰기</button></a>
 						</div>
 					</div>
 				</div>

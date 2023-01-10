@@ -66,7 +66,7 @@
 				</div>
 				<ul class="nav nav-tabs">
 					<li class="nav-item">
-					<a href="sitterDiaryPetChoice" class="nav-link active"style="color: #FE5C17;">작성 가능한 일지</a></li>
+					<a href="sitterDiaryPetChoice" class="nav-link active"style="color: #e56d00;">작성 가능한 일지</a></li>
 					<li class="nav-item"><a href="sitterDiaryWritten"
 						class="nav-link diary_inactive font_black">작성 한 일지</a></li>
 				</ul>
@@ -94,17 +94,17 @@
 						<div class="div_horizon">
 							<img src="/images/vsitter/profile.png" style="width: 60px;"><br>
 							<span class="mb_font">멍멍이</span><br>
-							<a href='http://localhost:8093/sitter/sitterDiaryForm' class="btn " style="background-color:#FE5C17; color:white">작성</a>
+							<a href='http://localhost:8093/sitter/sitterDiaryForm' class="btn btn-primary" >작성</a>
 						</div>
 						<div class="div_horizon">
 							<img src="/images/vsitter/profile.png" style="width: 60px;"><br>
 							<span class="mb_font">야용이</span><br>
-							<a href='http://localhost:8093/sitter/sitterDiaryForm' class="btn" style="background-color:#FE5C17; color:white">작성</a>
+							<a href='http://localhost:8093/sitter/sitterDiaryForm' class="btn btn-primary" >작성</a>
 						</div>
 						<div class="div_horizon">
 							<img src="/images/vsitter/profile.png" style="width: 60px;"><br>
 							<span class="mb_font">귄터</span><br>
-							<a href='http://localhost:8093/sitter/sitterDiaryForm' class="btn" style="background-color:#FE5C17; color:white">작성</a>
+							<a href='http://localhost:8093/sitter/sitterDiaryForm' class="btn btn-primary" >작성</a>
 						</div>					
 					</div>
 				</div>

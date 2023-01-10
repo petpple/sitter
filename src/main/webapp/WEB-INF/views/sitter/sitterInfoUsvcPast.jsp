@@ -83,7 +83,7 @@
             						</td>
             						<td><span class="m_font">방문</span></td>
             						<td><span class="m_font">취소</span></td>
-            						<td><a href=""><button class="btn btn-sm show_button" style="margin-bottom:10px;">상세</button></a><br>
+            						<td><a href=""><button class="btn btn-sm btn-primary" style="margin-bottom:10px;">상세</button></a><br>
             						</td>
             					</tr>
             					
@@ -103,7 +103,7 @@
             						</td>
             						<td><span class="m_font">방문</span></td>
             						<td><span class="m_font">확정</span></td>
-            						<td><a href=""><button class="btn btn-sm show_button" style="margin-bottom:10px;">상세</button></a><br>
+            						<td><a href=""><button class="btn btn-sm btn-primary" style="margin-bottom:10px;">상세</button></a><br>
             						</td>
             					</tr>
             				</table>

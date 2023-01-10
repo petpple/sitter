@@ -47,7 +47,7 @@
 <script type="text/javascript"
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
 <link rel="stylesheet" href="/css/fsitter/fsitterMyPet.css">
-<link rel="stylesheet" href="/css/fsitter/fsitterSvc.css">
+<link rel="stylesheet" href="/css/fsitter/vsitterSvc.css">
 <link rel="stylesheet" href="/css/main.css">
 <style>
 
@@ -221,15 +221,12 @@
    							<div class="locAndTitleDiv">
    								<p style="font-size: 14px; letter-spacing: -0.1px; color: rgb(94, 99, 109);">서울 강남구 청담동
    								</p>
-   								<p style="font-size: 20px; letter-spacing: -0.2px; color: rgb(56, 60, 72); margin-top: 9.5px;">한강산책 프리미엄 펫시터🐶
+   								<p style="font-size: 20px; letter-spacing: -0.2px; color: rgb(56, 60, 72); margin-top: 5px;">한강산책 프리미엄 펫시터🐶
    								</p>
    							</div>
    							<div class="underDiv">
 	   							<div class="underTitle">
-	   								<p style="color: rgb(56, 60, 72); font-size: 13px; letter-spacing: -0.3px; max-width: 400px;">
-	   									빌라 · 21~30평 · 흡연 인원 없음 · 2인 이하 가구 · 반려동물 있어요
-	   								</p>
-	   								<div style="display: flex; align-items: center; flex-direction: row; margin-bottom: 30px;">
+	   								<div style="display: flex; align-items: center; flex-direction: row; margin-bottom: 10px;">
 	   									<div style="width:140px; display: flex; flex-direction: row; justify-content: space-between; over">
 	   										<div class="starImg" style="display: flex; flex: 1 1 0%; justify-content: space-between;">
 	   											<img src="/images/sitter/pngwing.com.png">
@@ -238,15 +235,13 @@
 	   											<img src="/images/sitter/pngwing.com.png">
 	   											<img src="/images/sitter/pngwing.com.png">
 	   										</div>
-	   										
-	   										
 	   									</div>
-	   									<div style="displplay:flex; margin-left:30px;;">
+	   									<div style="displplay:flex; margin-left:10px;">
 		   										<span class="mb_font">후기 (5)</span>
 		   									</div>
 	   									</div>
 	   								</div>
-	   								<div style="text-align: center; margin-top:30px;">
+	   								<div style="text-align: center; margin-bottom:30px;">
 	   									<p style="font-size:13px; font-weight:bold;">등급 </p>
 	   									<div class="gradeImg">
 	   											<img src="/images/sitter/다운로드.jfif">

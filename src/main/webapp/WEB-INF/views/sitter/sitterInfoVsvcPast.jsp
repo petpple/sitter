@@ -81,7 +81,7 @@
             							<span class="m_font">종료일시 : </span><span class="m_font">2023년 1월 1일 14:00</span><br>
             						</td>
             						<td><span class="m_font">취소</span></td>
-            						<td><a href=""><button class="btn btn-sm show_button" style="margin-bottom:10px;">상세</button></a><br>
+            						<td><a href=""><button class="btn btn-sm btn-primary" style="margin-bottom:10px;">상세</button></a><br>
             						</td>
             					</tr>
             					
@@ -100,7 +100,7 @@
             							<span class="m_font">종료일시 : </span><span class="m_font">2023년 2월 11일 14:00</span><br>
             						</td>
             						<td><span class="m_font">확정</span></td>
-            						<td><a href=""><button class="btn btn-sm show_button" style="margin-bottom:10px;">상세</button></a><br>
+            						<td><a href=""><button class="btn btn-sm btn-primary" style="margin-bottom:10px;">상세</button></a><br>
             						</td>
             					</tr>
             				</table>
