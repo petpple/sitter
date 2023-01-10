@@ -132,8 +132,14 @@ $.datepicker.setDefaults($.datepicker.monthpicker);
 		       		</div>
 		       		
 		       		<div class="box_miInfo">
-						<label for="homeTaba">사진 등록</label><br>
-							<input type="file" class="real-upload" accept="image/*" required multiple>
+		       		
+		       			<div class="size_fix">
+                              <img src="/images/sitter/no_img.png" id="preview1" style="width: 100px; height=100px; object-fit: cover;"/> 
+                              <label for="img_select1" class="input-file-button">사진 첨부</label> 
+	                          <input type="file" id="img_select1" style="display: none;" />
+		       			</div>
+						<!-- <label for="homeTaba">사진 등록</label><br>
+							<input type="file" class="real-upload" accept="image/*" required multiple> -->
 					</div>
         	
 		        	
