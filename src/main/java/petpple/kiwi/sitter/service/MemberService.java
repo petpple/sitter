@@ -5,13 +5,13 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import petpple.kiwi.sitter.domain.Member;
-import petpple.kiwi.sitter.repository.MemberMapper;
+import petpple.kiwi.sitter.repository.IMemberMapper;
 
 @Service
 public class MemberService {
-	MemberMapper memberMapper;
+	IMemberMapper memberMapper;
 	
-	public MemberService(MemberMapper memberMapper)
+	public MemberService(IMemberMapper memberMapper)
 	{
 		this.memberMapper = memberMapper;
 	}
