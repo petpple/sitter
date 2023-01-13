@@ -11,16 +11,16 @@ public class VSitterController {
 	{
 		return "vsitter/index";
 	}
-	
+
 	@RequestMapping("/vsitter/sample")
 	public String vsitterSample()
 	{
 		return "vsitter/sample";
 	}
-	
-	@RequestMapping("vsitter/vsitterSide")
-	public String vsitterSide() {
-		return "vsitter/vsitterSide";
-	}
+
+//	@RequestMapping("vsitter/vsitterSide")
+//	public String vsitterSide() {
+//		return "vsitter/vsitterSide";
+//	}
 
 }
