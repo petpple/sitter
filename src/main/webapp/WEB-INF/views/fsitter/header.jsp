@@ -54,11 +54,14 @@
                           <a href="fsitterMyProfileUpdate" class="dropdown-item">내 프로필 변경</a>
                     </div>
                 </div>
-                
+                <a href="#" class="nav-item nav-link">로그아웃</a>
             </div>
-            <a href="" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Join Now<i class="fa fa-arrow-right ms-3"></i></a>
         </div>
     </nav>
+    <%
+    	session = request.getSession();
+    	out.print("임시회원 코드 : " + session.getAttribute("temId") + "<br>");
+    %>
     <!-- Navbar End -->
 </body>
 
