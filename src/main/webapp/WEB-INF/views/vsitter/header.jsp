@@ -51,11 +51,14 @@
                         <a href="sample" class="dropdown-item">404 Page</a>
                     </div>
                 </div>
-                <a href="#" class="nav-item nav-link">Contact</a>
+				<a href="#" class="nav-item nav-link">로그아웃</a>
             </div>
-            <a href="" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Join Now<i class="fa fa-arrow-right ms-3"></i></a>
         </div>
     </nav>
+    <%
+    	session = request.getSession();
+    	out.print("임시회원 코드 : " + session.getAttribute("temId") + "<br>");
+    %>
     <!-- Navbar End -->
 </body>
 
