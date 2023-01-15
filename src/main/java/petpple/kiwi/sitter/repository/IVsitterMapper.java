@@ -23,7 +23,7 @@ public interface IVsitterMapper
 	public int deleteVsitter(int id);
 
 	// 방문서비스 수락 대기중(펫시팅 정보)
-	public int waitingAcceptance();
+	public int waitingAccept();
 
 	// 방문서비스 누적 펫시팅 횟수(펫시팅 정보)
 	public int sumPetsitting();
@@ -34,6 +34,8 @@ public interface IVsitterMapper
 	// 위탁 서비스 누적 펫시팅 횟수(펫시팅 정보)
 	public int sumFpetsitting();
 
+	// 세션작업을 완료 한 후 수정
+//	public ArrayList<Vsitter> currentPetsitting(@Param("temId") String temId);
 	public ArrayList<Vsitter> currentPetsitting();
 
 
