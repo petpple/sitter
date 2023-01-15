@@ -2,6 +2,9 @@ package petpple.kiwi.sitter.controller.Sitter;
 
 import java.util.ArrayList;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -20,56 +23,47 @@ public class SitterMainController
 	private SqlSession SqlSession;
 
 	@GetMapping(value =  "vsitter/vsitterSide")
-	public String vsitterSide(Model model)
+	public String vsitterSide(Model model, HttpServletRequest request)
 	{
 		IVsitterMapper dao = SqlSession.getMapper(IVsitterMapper.class);
 
-		model.addAttribute("result1", dao.waitingAcceptance());
+		HttpSession session = request.getSession();
+	    String temId = (String)session.getAttribute("temId");
 
-		model.addAttribute("result2", dao.sumPetsitting());
-
-		model.addAttribute("result3",dao.waitingFacceptance());
-
-		model.addAttribute("result4",dao.sumFpetsitting());
-
+//		ArrayList<Vsitter> vsitterList = dao.currentPetsitting(temId);
 		ArrayList<Vsitter> vsitterList = dao.currentPetsitting();
 
-		model.addAttribute("vsitterList", vsitterList);
+		model.addAttribute("waitingAccept", dao.waitingAccept());
 
+		model.addAttribute("sumPetsitting", dao.sumPetsitting());
+
+		model.addAttribute("vsitterList", vsitterList);
 
 		return "vsitter/vsitterSide";
 	}
 
+// 	중간 메인 화면
 //	-------------- 방문 펫시터 메인페이지  ------------------
 
-	@RequestMapping(value = "")
-	public String vSitterMain(ModelMap modelMap)
+	@RequestMapping(value = "sitter/sitterMain")
+	public String vSitterMain(ModelMap modelMap, HttpServletRequest request)
 	{
-		return null;
+		IVsitterMapper dao = SqlSession.getMapper(IVsitterMapper.class);
+
+//		HttpSession session = request.getSession();
+//	    String temId = (String)session.getAttribute("temId");
+
+//		ArrayList<Vsitter> vsitterList = dao.currentPetsitting(temId);
+		ArrayList<Vsitter> vsitterList = new ArrayList<>();
+
+		modelMap.addAttribute("vsitterList", vsitterList);
+
+		System.out.println(vsitterList);
+
+		return "sitter/sitterMain";
 
 	}
 
-	/*
-	// 중간 메인 화면
-	@RequestMapping(value = "/member/memberMain")
-//	public String memberMain(ModelMap modelMap, HttpServletRequest req, HttpServletResponse resp, HttpSession session)
-	{
-		MemberMapper dao = sqlSession.getMapper(MemberMapper.class);
-
-		ArrayList<Member> memberList = dao.currentPetsitting();
-
-		ArrayList<Member> memberIng = dao.comfirmWaiting();
-
-		modelMap.addAttribute("memberList", memberList);
-
-		modelMap.addAttribute("memberIng", memberIng);
-
-//		System.out.println(memberIng);
-//		System.out.println(dao.currentPetsitting());
-
-		return "member/memberMain";
-	}
-	*/
 
 
 }
