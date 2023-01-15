@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="petpple.kiwi.member.repository.sitter.ISitterMapper">
+
+	<!-- 로그인 -->
+	<select id="sitterLogin" resultType="java.lang.Integer" parameterType="Sitter">
+		SELECT COUNT(*)
+		FROM MEMBER
+		WHERE MEM_ID_ID= #{id} AND MEM_PW = #{pw}
+	</select>
+	
+	<!-- 임의 회원 코드 -->
+	<select id="tmpMemberId" resultType="string" parameterType="Sitter">
+		SELECT TMP_MEMBER_ID 
+		FROM MEMBER
+		WHERE MEM_ID_ID=#{id} AND MEM_PW=#{pw}
+	</select>
+	
+	<!-- 펫시터 코드 -->
+</mapper>
