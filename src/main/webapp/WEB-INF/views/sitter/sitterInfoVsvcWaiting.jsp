@@ -67,7 +67,7 @@
             						<th>상세보기 / 수락</th>
             					</tr>
             					<tr>
-            						<td>2022년 12월 1일<br> 12:30 </td>
+            						<td>${service.reqDate } </td>
             						<td>
             							<div class="petImg">
 													<img src="${service.clientProfile }">

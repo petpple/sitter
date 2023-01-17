@@ -27,7 +27,7 @@
         <div class ="box_pi">
             <img src="/images/vsitter/visit_svc.svg" class="svgImg2">
             <span class="font m_font">방문 서비스</span><br>
-            <a href="http://localhost:8093/sitter/sitterInfoVsvcWaiting" class="side_aTag"><span class="s_font font_black">수락 대기중 : <span>${waitingAccept }</span> 건</span></a><br>
+            <a href="http://localhost:8093/sitter/sitterInfoVsvcWaiting" class="side_aTag"><span class="s_font font_black">수락 대기중 : <span><c:out value="${waitingAccept}"/></span> 건</span></a><br>
             <a href="http://localhost:8093/sitter/sitterInfoVsvcPast" class="side_aTag"><span class="s_font font_black">지난 펫시팅 이력 : <span>${sumPetsitting }</span> 건</span></a><br>
         </div><br>
         <div class ="box_pi_money">

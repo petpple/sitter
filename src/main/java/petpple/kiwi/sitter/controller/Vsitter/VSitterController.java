@@ -57,7 +57,7 @@ public class VSitterController {
 //	}
 
 	@RequestMapping("sitter/VSvcreservation")
-	public String sitterInfoVsvcWaiting(@RequestParam("vId") String vId) {
+	public String sitterVSvcreservation(@RequestParam("vId") String vId) {
 		
 		IVsitterMapper dao = sqlSession.getMapper(IVsitterMapper.class);
 		dao.reserveVisit(vId);

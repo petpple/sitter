@@ -30,10 +30,13 @@ public class SitterMainController
 		HttpSession session = request.getSession();
 	    String temId = (String)session.getAttribute("temId");
 
-//		ArrayList<Vsitter> vsitterList = dao.currentPetsitting(temId);
+	    System.out.println("temId:"+temId);
+	    int num = dao.waitingAccept(temId);
+	    System.out.println(num);
+	    //		ArrayList<Vsitter> vsitterList = dao.currentPetsitting(temId);
 		ArrayList<Vsitter> vsitterList = dao.currentPetsitting();
 
-		model.addAttribute("waitingAccept", dao.waitingAccept(temId));
+		model.addAttribute("waitingAccept", num);
 
 		model.addAttribute("sumPetsitting", dao.sumPetsitting());
 
