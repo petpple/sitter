@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 import petpple.kiwi.sitter.domain.Vsitter;
 
@@ -33,12 +34,13 @@ public interface IVsitterMapper
 
 	// 위탁 서비스 누적 펫시팅 횟수(펫시팅 정보)
 	public int sumFpetsitting();
-
+	
+	public ArrayList<Vsitter> requestVisitService(@Param("temId") String temId);
 	// 세션작업을 완료 한 후 수정
 //	public ArrayList<Vsitter> currentPetsitting(@Param("temId") String temId);
 	public ArrayList<Vsitter> currentPetsitting();
 
-
+	public int reserveVisit(@Param("vId") String vId);
 
 
 }
