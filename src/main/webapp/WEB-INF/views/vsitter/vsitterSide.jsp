@@ -21,8 +21,8 @@
         <div class ="box_pi">
             <img src="/images/vsitter/u_svc.svg" class="svgImg2">
             <span class="font m_font">긴급 요청 서비스</span><br>
-            <a href="http://localhost:8093/sitter/sitterInfoUsvcWaiting" class="side_aTag"><span class="font s_font font_black">수락 대기중 : n건</span></a><br>
-            <a href="http://localhost:8093/sitter/sitterInfoUsvcPast" class="side_aTag"><span class="font s_font font_black">지난 펫시팅 이력 : n건</span></a><br>
+            <a href="http://localhost:8093/sitter/sitterInfoUsvcWaiting" class="side_aTag"><span class="font s_font font_black">수락 대기중 : 0건</span></a><br>
+            <a href="http://localhost:8093/sitter/sitterInfoUsvcPast" class="side_aTag"><span class="font s_font font_black">지난 펫시팅 이력 : 0건</span></a><br>
         </div><br>
         <div class ="box_pi">
             <img src="/images/vsitter/visit_svc.svg" class="svgImg2">
