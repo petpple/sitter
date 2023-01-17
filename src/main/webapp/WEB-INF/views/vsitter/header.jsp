@@ -57,7 +57,7 @@
     </nav>
     <%
     	session = request.getSession();
-    	out.print("임시회원 코드 : " + session.getAttribute("temId") + "<br>");
+//     	out.print("임시회원 코드 : " + session.getAttribute("temId") + "<br>");
     %>
     <!-- Navbar End -->
 </body>
