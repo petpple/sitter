@@ -42,11 +42,6 @@ public class SitterController {
 		return "sitter/sitterMyBank";
 	}
 
-	@RequestMapping("sitter/sitterMySide")
-	public String sitterMySide() {
-		return "sitter/sitterMySide";
-	}
-
 	@RequestMapping("sitter/sitterMyDrawl")
 	public String sitterMyDrawl() {
 		return "sitter/sitterMyDrawl";
