@@ -62,10 +62,7 @@ public class SitterController {
 		return "sitter/sitterInfoVsvcPast";
 	}
 
-	@RequestMapping("sitter/sitterInfoVsvcWaiting")
-	public String sitterInfoVsvcWaiting() {
-		return "sitter/sitterInfoVsvcWaiting";
-	}
+	
 
 	@RequestMapping("sitter/sitterInfoFsvcPast")
 	public String sitterInfoFsvcPast() {
