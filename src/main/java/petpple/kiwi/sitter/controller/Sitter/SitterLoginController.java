@@ -54,7 +54,7 @@ public class SitterLoginController {
 		  if (str != 0)
 		  {
 			  session.setAttribute("temId",temId);
-			  return "/sitter/sitterMain";
+			  return "redirect:/sitter/sitterMain";
 		  }
 		  else
 		  { 

@@ -6,8 +6,8 @@
 <mapper namespace="petpple.kiwi.sitter.repository.IVsitterMapper">
 
 	<!-- 방문 서비스 수락 대기중 -->
-    <select id="waitingAccept" resultType="java.lang.Integer">
-	<![CDATA[
+    <select id="waitingAccept" resultType="java.lang.Integer" parameterType="String">
+
     	SELECT COUNT(*) AS COUNT
 		FROM MEMBER M JOIN TMP_MEM TM
 		ON M.TMP_MEMBER_ID = TM.T_MEM_ID
@@ -25,8 +25,8 @@
 		ON V.V_ID = VR.V_ID
 		JOIN PAY P
 		ON P.P_ID = V.PAYMENT_ID
-		WHERE TMP_MEMBER_ID='UV8YF0IN08'
-    ]]>
+		WHERE TMP_MEMBER_ID=#{temId}
+
 <!-- 		AND SYSDATE >= V.V_START_DATE -->
 <!-- 		AND SYSDATE <= V.V_END_DATE -->
     </select>

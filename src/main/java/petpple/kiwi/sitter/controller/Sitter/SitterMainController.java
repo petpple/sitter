@@ -33,7 +33,7 @@ public class SitterMainController
 //		ArrayList<Vsitter> vsitterList = dao.currentPetsitting(temId);
 		ArrayList<Vsitter> vsitterList = dao.currentPetsitting();
 
-		model.addAttribute("waitingAccept", dao.waitingAccept());
+		model.addAttribute("waitingAccept", dao.waitingAccept(temId));
 
 		model.addAttribute("sumPetsitting", dao.sumPetsitting());
 

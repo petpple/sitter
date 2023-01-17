@@ -24,7 +24,7 @@ public interface IVsitterMapper
 	public int deleteVsitter(int id);
 
 	// 방문서비스 수락 대기중(펫시팅 정보)
-	public int waitingAccept();
+	public int waitingAccept(@Param("temId") String temId);
 
 	// 방문서비스 누적 펫시팅 횟수(펫시팅 정보)
 	public int sumPetsitting();

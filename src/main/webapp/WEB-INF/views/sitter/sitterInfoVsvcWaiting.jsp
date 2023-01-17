@@ -51,7 +51,7 @@
         <div class="container">
             <div class="row justify-content-center">
             	<div class="col-lg-2 wow fadeInUp" data-wow-delay="0.2s" id="info">
-            		<c:import url="http://localhost:8093/vsitter/vsitterSide"></c:import>
+            		<c:import url="/vsitter/vsitterSide"></c:import>
             	</div>
             		
             	<div class="col-lg-7" id="">
