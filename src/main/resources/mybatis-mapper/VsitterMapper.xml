@@ -75,5 +75,36 @@
 		AND SYSDATE <![CDATA[>]]>= V.V_START_DATE
 	</select>
 	
+	<select id="requestVisitService" resultType="Vsitter" parameterType="String"> 
+	SELECT v.V_REQ_DATE as reqDate, v.V_CLI_ADDR AS addr , p.P_TOTAL AS totalPrice, TO_CHAR(v.V_START_DATE, '""YYYY"년 "MM"월 "DD"일 "HH24"')||':00' AS startDate, TO_CHAR(v.V_END_DATE, '""YYYY"년 "MM"월 "DD"일 "HH24"')||':00' AS endDate
+		,v.V_ID AS vid ,(SELECT m.MEM_NICKNAME  
+						FROM MEMBER m
+						WHERE m.TMP_MEMBER_ID= ps.TMP_MEMBER_ID) AS clientNickname
+						,(SELECT m.MEM_IMG  
+						FROM MEMBER m
+						WHERE m.TMP_MEMBER_ID= ps.TMP_MEMBER_ID) AS clientProfile
+FROM V v
+INNER JOIN S_ALLOW sa 
+ON sa.S_ALL_ID = v.S_ALL_ID  
+INNER JOIN S_APPLY sp
+ON sp.S_APP_ID = sa.S_APP_ID 
+INNER JOIN V_PET_CHO vpc 
+ON vpc.V_ID = v.V_ID 
+INNER JOIN PET_SHARE ps 
+ON ps.P_SHA_ID = vpc.P_SHA_ID 
+JOIN PAY P
+ON P.P_ID = V.PAYMENT_ID
+LEFT OUTER JOIN V_REF_REF VRR
+ON VRR.V_ID = V.V_ID
+LEFT OUTER JOIN V_RESERV VR
+ON V.V_ID = VR.V_ID  
+WHERE SP.TMP_MEMBER_ID = #{temId}
+AND VRR.V_REF_REF_DATE IS NULL 
+AND VR.V_RES_DATE IS NULL
 	
+	</select>
+	
+	<insert id="reserveVisit" parameterType="String">
+		INSERT INTO V_RESERV (V_RES_ID,V_RES_DATE,V_ID) VALUES(SEQ_V_RES_ID.NEXTVAL,SYSDATE,#{vId})
+	</insert>
 </mapper>
