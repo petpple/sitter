@@ -138,6 +138,29 @@
 		}
 	}
 </script>
+
+<script type="text/javascript">
+
+	$(document).ready(function() {
+	
+		var today = new Date();
+
+		var year = today.getFullYear();
+		var month = ('0' + (today.getMonth() + 1)).slice(-2);
+		var day = ('0' + today.getDate()).slice(-2);
+
+		var dateString = year + '-' + month  + '-' + day;
+
+		console.log(dateString);
+		// 결과 : 2023-01-17
+		
+		document.getElementById("today").innerHTML=dateString;
+	});
+	
+
+</script>
+
+
 </head>
 
 <body>
@@ -177,7 +200,7 @@
 					<div class="box_mi">
 						<div class="box_diary">
 							<div class="div_diary_header">
-								<span class="h2_font">2022년 12월 22일</span><br>
+								<span class="h2_font" id="today"></span><br>
 								<div class="">
 									<img src="/images/vsitter/profile.png"
 										style="width: 60px; margin-right: 10px;"><span
@@ -185,7 +208,7 @@
 								</div>
 							</div>
 
-							<form class="form">
+							<form class="form" >
 								<div class="div_center" style="width: 500px;">
 									<span class="l_font" style="">오늘 하루 식사를 몇번 했나요?</span>
 									<div style="margin-top: 10px;">
