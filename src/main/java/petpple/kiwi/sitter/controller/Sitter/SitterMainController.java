@@ -42,6 +42,8 @@ public class SitterMainController
 		return "vsitter/vsitterSide";
 	}
 
+	
+	
 // 	중간 메인 화면
 //	-------------- 방문 펫시터 메인페이지  ------------------
 
