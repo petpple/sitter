@@ -59,6 +59,7 @@
             			<span class="h2_font">방문서비스-펫시터 수락 대기중</span>
             			<div class="box_white">
             				<table class="table tab_Info m_font">
+            					<c:forEach var="service" items="${list}">
             					<tr>
             						<th>지원일시</th>
             						<th>의뢰자</th>
@@ -69,39 +70,21 @@
             						<td>2022년 12월 1일<br> 12:30 </td>
             						<td>
             							<div class="petImg">
-													<img src="/images/sitter/IMG_2087-scaled-e1634883900174.jpg">
+													<img src="${service.clientProfile }">
 										</div>
-										<span class="mb_font">루카스</span>
+										<span class="mb_font">${service.clientNickname }</span>
             						</td>
             						<td style="text-align:left; padding-left:30px;">
-            							<span class="m_font">주소 : </span><span class="m_font">서울특별시 강서구 화곡로</span><br>
-            							<span class="m_font">금액 : </span><span class="m_font">30,000원</span><br>
-            							<span class="m_font">시작일시 : </span><span class="m_font">2022년 12월30일 15:00</span><br>
-            							<span class="m_font">종료일시 : </span><span class="m_font">2023년 1월 1일 14:00</span><br>
+            							<span class="m_font">주소 : </span><span class="m_font">${service.addr }</span><br>
+            							<span class="m_font">금액 : </span><span class="m_font">${service.totalPrice }</span><br>
+            							<span class="m_font">시작일시 : </span><span class="m_font">${service.startDate }</span><br>
+            							<span class="m_font">종료일시 : </span><span class="m_font">${service.endDate }</span><br>
             						</td>
             						<td><a href=""><button class="btn btn-sm btn-light" style="margin-bottom:10px;color:white">상세</button></a><br>
-            							<a href=""><button class="btn btn-sm btn-success">수락</button></a>
+            							<a href="/sitter/VSvcreservation?vId=${service.vid }"><button class="btn btn-sm btn-success">수락</button></a>
             						</td>
             					</tr>
-            					
-            					<tr>
-            						<td>2022년 12월 1일<br> 12:30 </td>
-            						<td>
-            							<div class="petImg">
-													<img src="/images/sitter/IMG_2087-scaled-e1634883900174.jpg">
-										</div>
-										<span class="mb_font">루카스</span>
-            						</td>
-            						<td style="text-align:left; padding-left:30px;">
-            							<span class="m_font">주소 : </span><span class="m_font">서울특별시 강서구 화곡로</span><br>
-            							<span class="m_font">금액 : </span><span class="m_font">30,000원</span><br>
-            							<span class="m_font">시작일시 : </span><span class="m_font">2022년 12월30일 15:00</span><br>
-            							<span class="m_font">종료일시 : </span><span class="m_font">2023년 1월 1일 14:00</span><br>
-            						</td>
-            						<td><a href=""><button class="btn btn-sm btn-light" style="margin-bottom:10px; color:white ">상세</button></a><br>
-            							<a href=""><button class="btn btn-sm btn-success">수락</button></a>
-            						</td>
-            					</tr>
+            					</c:forEach>
             				</table>
             				<div style="text-align:center">
 	            				<nav aria-label="Page navigation example"style=" display: inline-block;">
