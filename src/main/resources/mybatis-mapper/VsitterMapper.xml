@@ -54,8 +54,8 @@
     
     <!-- 진행중인 펫시팅 -->
     <select id="currentPetsitting" resultType="Vsitter">
-	   	SELECT V_ID AS vid, V_CLI_ADDR AS addr, TO_CHAR(V_START_DATE, '""YYYY"년 "MM"월 "DD"일 "HH" : "MI"') AS startDate
-			, TO_CHAR(V_END_DATE, '""YYYY"년 "MM"월 "DD"일 "HH" : "MI"') AS endDate, TO_CHAR(V_REQ_DATE, '""YYYY"년 "MM"월 "DD"일 "HH" : "MI"') AS reqDate
+	   	SELECT V_ID AS vid, V_CLI_ADDR AS addr, TO_CHAR(V_START_DATE, '""YYYY"년 "MM"월 "DD"일 "HH24" : "MI"') AS startDate
+			, TO_CHAR(V_END_DATE, '""YYYY"년 "MM"월 "DD"일 "HH24" : "MI"') AS endDate, TO_CHAR(V_REQ_DATE, '""YYYY"년 "MM"월 "DD"일 "HH24" : "MI"') AS reqDate
 			, P_TOTAL - (P_TOTAL * 0.1) AS totalPrice
 			, MEM_NICKNAME AS clientNickname
 		FROM MEMBER M JOIN TMP_MEM TM
@@ -75,9 +75,9 @@
 		JOIN PAY P
 		ON P.P_ID = V.PAYMENT_ID
 		WHERE TM.T_MEM_ID = 'UV8YF0IN08'
-		AND SYSDATE <![CDATA[<]]>= V.V_END_DATE
-		AND SYSDATE <![CDATA[>]]>= V.V_START_DATE
 	</select>
+<!-- 		AND SYSDATE <![CDATA[>]]>= V.V_START_DATE -->
+<!-- 		AND SYSDATE <![CDATA[<]]>= V.V_END_DATE -->
 	
 	<select id="requestVisitService" resultType="Vsitter" parameterType="String"> 
 	SELECT v.V_REQ_DATE as reqDate, v.V_CLI_ADDR AS addr , p.P_TOTAL AS totalPrice, TO_CHAR(v.V_START_DATE, '""YYYY"년 "MM"월 "DD"일 "HH24"')||':00' AS startDate, TO_CHAR(v.V_END_DATE, '""YYYY"년 "MM"월 "DD"일 "HH24"')||':00' AS endDate
