@@ -3,7 +3,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="petpple.kiwi.member.repository.sitter.ISitterMapper">
+<mapper namespace="petpple.kiwi.sitter.repository.sitter.ISitterMapper">
 
 	<!-- 로그인 -->
 	<select id="sitterLogin" resultType="java.lang.Integer" parameterType="Sitter">
