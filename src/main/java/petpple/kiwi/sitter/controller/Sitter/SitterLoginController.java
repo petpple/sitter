@@ -36,33 +36,31 @@ public class SitterLoginController {
 	
 	//------------------------시터 로그인 시도------------------------
 	@RequestMapping(value = "/sitter/loginAction", method = RequestMethod.POST)
-	public String sitterLogin(@RequestParam("userId") String id, @RequestParam("userPw") String pw, HttpServletRequest request)
+	public String sitterLoginAction(@RequestParam("userId") String id, @RequestParam("userPw") String pw, HttpServletRequest request)
 	{
-//		ISitterMapper dao = sqlSession.getMapper(ISitterMapper.class);
-//		
-//		HttpSession session = request.getSession();
-//		
-//		Sitter temp = new Sitter();
-//		temp.setId(id);
-//		temp.setPw(pw);
-//		int str = 0;
-//
-//		str = dao.sitterLogin(temp);
-//		String temId = dao.tmpMemberId(temp);
-//		System.out.println(temId);
-//
-//		  if (str != 0)
-//		  {
-//			  session.removeAttribute("temId");
-//			  return "/sitter/sitterMain";
-//		  }
-//		  else
-//		  { 
-//			  session.setAttribute("temId", null);
-//			  return "redirect:/sitter/sitterLogin";
-//		  }
+		ISitterMapper dao = sqlSession.getMapper(ISitterMapper.class);
+	
+		HttpSession session = request.getSession();
 		
-		return "/sitter/sitterMain";
+		Sitter temp = new Sitter();
+		temp.setId(id);
+		temp.setPw(pw);
+		int str = 0;
+
+		str = dao.sitterLogin(temp);
+		String temId = dao.tmpMemberId(temp);
+		System.out.println(temId);
+
+		  if (str != 0)
+		  {
+			  session.setAttribute("temId",temId);
+			  return "/sitter/sitterMain";
+		  }
+		  else
+		  { 
+			  session.setAttribute("temId", null);
+			  return "redirect:/sitter/sitterLogin";
+		  }
 	}
 	
 	
