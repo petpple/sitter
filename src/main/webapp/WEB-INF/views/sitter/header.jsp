@@ -68,7 +68,7 @@
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg navbar-light sticky-top p-3" style="background-color:#ffe4cf">
         <a href="index" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
-            <h2 class="m-0 text-primary"><img alt="" src="/images/kiwi2.svg"></i> Kiwi</h2>
+            <h2 class="m-0 text-primary"><img alt="" src="/images/kiwi2.svg"> Kiwi</h2>
         </a>
         <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
@@ -77,7 +77,7 @@
             <div class="navbar-nav ms-auto p-4 p-lg-0">
                 <a href="http://localhost:8093/sitter/sitterMain" class="nav-item nav-link">펫시터 메인</a>
                 <a href="http://localhost:8093/sitter/sitterDiaryPetChoice" class="nav-item nav-link">긴급서비스</a>
-                <a href="#" class="nav-item nav-link">일지</a>
+                <a href="sitterDiaryForm" class="nav-item nav-link">일지</a>
                 <a href="#" class="nav-item nav-link">마이페이지</a>
             </div>
             <a href="/logout" class="nav-item nav-link">로그아웃</a>
