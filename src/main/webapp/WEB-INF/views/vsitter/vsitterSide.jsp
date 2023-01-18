@@ -32,19 +32,9 @@
         </div><br>
         <div class ="box_pi_money">
             <img src="/images/vsitter/money.svg" class="svgImg2">
-            <span class="font m_font">수익금</span><br>
-				<c:if test="${empty vsitterList }">
+            <span class="font m_font">수익금</span><br>	
    	        		<span class="font s_font buttons">이번 달 수익금 : 이번 달<br> 수익금이 없습니다.</span><br>
        	    		<span class="font s_font buttons">총 수익금 : 총 수익금이<br> 없습니다.</span><br>
-				</c:if>
-	
-				<c:forEach var="vsitter" items="${vsitterList }">
-   	        		<span class="font s_font buttons">이번 달 수익금 : <fmt:formatNumber value="${vsitter.totalPrice }"/> 원</span><br>
-       	    		<span class="font s_font buttons">총 수익금 : <fmt:formatNumber value="${vsitter.totalPrice }"/> 원</span><br>
-					
-				</c:forEach>            	
-            	
-
         </div>
 </body>
 </html>
