@@ -78,7 +78,16 @@
                 <a href="http://localhost:8093/sitter/sitterMain" class="nav-item nav-link">펫시터 메인</a>
                 <a href="http://localhost:8093/sitter/sitterDiaryPetChoice" class="nav-item nav-link">긴급서비스</a>
                 <a href="sitterDiaryForm" class="nav-item nav-link">일지</a>
-                <a href="#" class="nav-item nav-link">마이페이지</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">마이페이지</a>
+                    <div class="dropdown-menu fade-down m-0">
+                        <a href="sitterMyInfo" class="dropdown-item">내정보 변경</a>
+                        <a href="sample" class="dropdown-item">계좌 변경</a>
+                        <a href="sitterMyPet" class="dropdown-item">내 펫 관리</a>
+                        <a href="sample" class="dropdown-item">탈퇴하기</a>
+                        <a href="sitterMyProfileUpdate" class="dropdown-item">내 프로필 변경</a>
+                    </div>
+                </div>
             </div>
             <a href="/logout" class="nav-item nav-link">로그아웃</a>
         </div>
