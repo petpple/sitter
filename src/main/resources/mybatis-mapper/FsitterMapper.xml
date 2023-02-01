@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="petpple.kiwi.sitter.repository.IFsitterMapper">
+	
+	<!-- 위탁펫시터 신고 -->
+	<insert id="createFsitter" parameterType="Fsitter" >
+		INSERT INTO FOS_SITTER(F_SIT_ID,F_SIT_IMG1,F_SIT_IMG2,F_SIT_IMG3,F_SIT_PUB_DATE,S_STA_ID,R_TYPE_ID,R_SIZE_ID,S_ALL_ID)
+		VALUES(SEQ_F_SIT_ID.NEXTVAL,#{resImg1},#{resImg2},#{resImg3},NULL
+		,#{smoking},#{resType},#{resSize},#{allowId}) <!-- 방문펫시터 승인번호가 필요 얻어와야함 -->
+	</insert>
+	
+	<!-- 임의 회원코드를 통해 방문펫시터 승인번호 얻어내는 쿼리문 -->
+	<!-- 임의 회원코드를 String 형식으로 받아와서 String타입으로 반환 -->
+	<select id="allowId" parameterType="String" resultType="String">
+		SELECT SA.S_ALL_ID as allowId
+		FROM MEMBER M JOIN TMP_MEM TM
+		ON M.TMP_MEMBER_ID = TM.T_MEM_ID
+		JOIN S_APPLY SP
+		ON TM.T_MEM_ID = SP.TMP_MEMBER_ID
+		JOIN S_ALLOW SA
+		ON SP.S_APP_ID = SA.S_APP_ID
+		WHERE TM.T_MEM_ID = #{temId}
+	</select>
+
+	<!-- 임의 회원 코드를 통해 방뭔펫시터 승인번호를 얻어내는 쿼리문 -->
+	<!-- 
+	<select id="">
+		SELECT SA.S_ALL_ID as id
+		FROM MEMBER M JOIN TMP_MEM TM
+		ON M.TMP_MEMBER_ID = TM.T_MEM_ID
+		JOIN S_APPLY SP
+		ON TM.T_MEM_ID = SP.TMP_MEMBER_ID
+		JOIN S_ALLOW SA
+		ON SP.S_APP_ID = SA.S_APP_ID
+		WHERE TM.T_MEM_ID = #{temId}
+	
+	</select>
+	 -->
+	<!-- 이미 위탁펫시터인지 확인 후 이미 존재한 경우 다시 메인화면으로 이동시킬 쿼리 -->
+	<!-- 
+	<select id="">
+		SELECT COUNT(*) AS COUNT
+		FROM MEMBER M JOIN TMP_MEM TM
+		ON M.TMP_MEMBER_ID = TM.T_MEM_ID
+		JOIN S_APPLY SP
+		ON TM.T_MEM_ID = SP.TMP_MEMBER_ID
+		JOIN S_ALLOW SA
+		ON SP.S_APP_ID = SA.S_APP_ID
+		JOIN FOS_SITTER FS
+		ON SA.S_ALL_ID = FS.S_ALL_ID
+		WHERE TM.T_MEM_ID = #{temId}
+	</select>
+	 -->
+</mapper>
