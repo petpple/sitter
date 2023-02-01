@@ -74,4 +74,42 @@ public class SitterController {
 		return "sitter/sitterInfoFsvcWaiting";
 	}
 
+	//-- 수정함	
+	@RequestMapping("/sitter/sitterMyProfile")
+	public String sitterMyProfile()
+	{
+		return "sitter/sitterMyProfile";
+	}
+
+	@RequestMapping("/sitter/sitterMyProfileUpdate")
+	public String sitterMyProfileUpdate()
+	{
+		return "sitter/sitterMyProfileUpdate";
+	}
+
+	@RequestMapping("/sitter/sitterMyInfo")
+	public String sitterMyInfo()
+	{
+		return "sitter/sitterMyInfo";
+	}
+	
+	@RequestMapping("/sitter/sitterMyPet")
+	public String sitterMyPet()
+	{
+		return "sitter/sitterMyPet";
+	}
+
+	/*
+	@RequestMapping("/sitter/sitterMyPetInsert")
+	public String sitterMyPetInsert()
+	{
+		return "sitter/sitterMyPetInsert";
+	}
+
+	@RequestMapping("/sitter/sitterMyPetUpdate")
+	public String sitterMyPetUpdate()
+	{
+		return "sitter/sitterMyPetUpdate";
+	}
+	*/
 }
