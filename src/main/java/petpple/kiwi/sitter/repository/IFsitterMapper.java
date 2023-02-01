@@ -20,5 +20,7 @@ public interface IFsitterMapper
 	public int updateFsitter(Fsitter fsitter);
 
 	public int deleteFsitter(int id);
-
+	
+	public String allowId(String temId);
+	
 }
