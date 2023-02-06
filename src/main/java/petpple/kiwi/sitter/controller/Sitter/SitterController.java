@@ -92,14 +92,14 @@ public class SitterController {
 	{
 		return "sitter/sitterMyInfo";
 	}
-	
+	/*
 	@RequestMapping("/sitter/sitterMyPet")
 	public String sitterMyPet()
 	{
 		return "sitter/sitterMyPet";
 	}
 
-	/*
+	
 	@RequestMapping("/sitter/sitterMyPetInsert")
 	public String sitterMyPetInsert()
 	{

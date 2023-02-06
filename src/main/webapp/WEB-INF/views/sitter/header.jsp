@@ -82,9 +82,9 @@
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">마이페이지</a>
                     <div class="dropdown-menu fade-down m-0">
                         <a href="sitterMyInfo" class="dropdown-item">내정보 변경</a>
-                        <a href="sample" class="dropdown-item">계좌 변경</a>
+                        <a href="sitterMyBank" class="dropdown-item">계좌 변경</a>
                         <a href="sitterMyPet" class="dropdown-item">내 펫 관리</a>
-                        <a href="sample" class="dropdown-item">탈퇴하기</a>
+                        <a href="sitterMyDrawl" class="dropdown-item">탈퇴하기</a>
                         <a href="sitterMyProfileUpdate" class="dropdown-item">내 프로필 변경</a>
                     </div>
                 </div>

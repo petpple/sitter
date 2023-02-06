@@ -199,15 +199,15 @@ $(function() { // 파일 업로드
 									<!--  <div class="form-group m_font" id="MyPro1"> -->
 									 	<div class="lg-3 row"> 
 										     <div class="col-lg-5" style="margin-left: -10px;">
-										      	<input type="text" class="form-control" id="location" placeholder="서울시 마포구 합정동" >
+										      	<input type="text" class="form-control" id="location" placeholder="서울시 마포구 합정동" value="${sitter.addr }">
 										     </div>
 										     	<label for="location" class="col-lg-2 col-form-label">펫시터</label>
 										     <div class="col-lg-3">
-										      	<input type="text" class="form-control"  placeholder="다나카" Readonly>
+										      	<input type="text" class="form-control"  placeholder="다나카" value="${sitter.name }"Readonly>
 										     </div>
 										    	<label for="sitterName3" class="col-lg-2 col-form-label" >님</label>
 										    	
-										    	<input type="text" class="form-control form-control-lg" id="loc3" placeholder="내 아이를 돌보듯 따뜻하고 편안하게">
+										    	<input type="text" class="form-control form-control-lg" id="loc3" placeholder="내 아이를 돌보듯 따뜻하고 편안하게" value="${sitter.title }">
 										</div><!-- <div class="lg-3 row"> -->
 										
 											<label
@@ -222,13 +222,14 @@ $(function() { // 파일 업로드
 						<div class="box_miMyPr2 ">
 							<div class="lg-3 row">
 							    <div class="col-lg-2">
-							      <input type="text" class="form-control"  placeholder="다나카" Readonly>
+							      <input type="text" class="form-control"	 value="${sitter.name }" Readonly>
 							    </div>
 							    <label for="sitterName2" class="col-lg-5 col-form-label" >펫시터님을 소개합니다.</label>
 							</div>
 							<br>
-							<div>
-								<textarea class="form-control m_font" rows="9" placeholder="안녕하세요. 반려동물을 무한히 사랑하는 펫시터 다나카입니다. 지금은 곁에 없지만 17년동안 막내아들처럼 함께했던 반려견을 보내고 그리움과 허전함으로 힘들게 지내다가, 마침내 용기를 내어서 주변에 혼자있게 되는 반려견을 견주님들이 내 집처럼 맡길수 있는 펫시터로서의 일을 시작하게 되었습니다. 반려견들이 더 존중받는 뉴질랜드에서부터 반려견을 키우고, 지인들의 반려견들을 맡아주던 경험도 많습니다. 집 근처에 있는 여러 공원과 반포천은 반려견들이 산책하기에 좋은 환경입니다. 내 아이를 돌보듯 따뜻하고 편안하게, 사랑과 정성으로 최선을 다해 보살펴드리겠습니다."></textarea>
+							<div class="shadow-sm" style ="background-color: white; padding:20px;">
+								<!-- <textarea class="form-control m_font" rows="9" placeholder="안녕하세요. 반려동물을 무한히 사랑하는 펫시터 다나카입니다. 지금은 곁에 없지만 17년동안 막내아들처럼 함께했던 반려견을 보내고 그리움과 허전함으로 힘들게 지내다가, 마침내 용기를 내어서 주변에 혼자있게 되는 반려견을 견주님들이 내 집처럼 맡길수 있는 펫시터로서의 일을 시작하게 되었습니다. 반려견들이 더 존중받는 뉴질랜드에서부터 반려견을 키우고, 지인들의 반려견들을 맡아주던 경험도 많습니다. 집 근처에 있는 여러 공원과 반포천은 반려견들이 산책하기에 좋은 환경입니다. 내 아이를 돌보듯 따뜻하고 편안하게, 사랑과 정성으로 최선을 다해 보살펴드리겠습니다."></textarea>  -->
+								<p>${sitter.content }</p>
 							</div>
 						</div><!-- <div class="box_miMyPr2 "> -->
 			
@@ -265,11 +266,14 @@ $(function() { // 파일 업로드
 							<label for="sitter_name m_font">돌봄 가능 펫 크기</label>
 							<br><br>
 								<div class="radio">
-								    <input type="radio" name="petsize" id="petsize" value="1">
+								    <input type="radio" name="petsize" id="petsize" value="1"
+								    <%if ("1".equals("1")) {%> checked <%}%>>
 								    소형견 (7kg 미만)&emsp;&emsp;&emsp;
-								    <input type="radio" name="petsize" id="petsize" value="2">
+								    <input type="radio" name="petsize" id="petsize" value="2"
+								    <%if ("1".equals("2")) {%> checked <%}%>>
 								    중형견 (7 ~ 14.9kg)&emsp;&emsp;&emsp;
-								    <input type="radio" name="petsize" id="petsize" value="3">
+								    <input type="radio" name="petsize" id="petsize" value="3"
+								    <%if ("1".equals("3")) {%> checked <%}%>>
 								    대형견 (15kg 이상)
 							</div>
 						</div>

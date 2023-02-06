@@ -91,7 +91,7 @@ public class SitterPetInsertController {
 		String profile = new ImgUpload().uploadProfileImg(file, path,path2, id);
 
 		HashMap<String, Object> map = new HashMap<String, Object>();
-		map.put("profile", "\\images\\sitter\\pet\\" + profile);
+		map.put("profile", "\\images\\member\\pet\\" + profile);
 		map.put("id", id);
 		daoIPetManage.insertPetProfile(map);
 
