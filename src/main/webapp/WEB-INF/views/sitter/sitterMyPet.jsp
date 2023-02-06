@@ -39,7 +39,7 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
     
     
-	<link rel="stylesheet" href="/css/member/fsitter/fsitterMyPet.css">
+	<link rel="stylesheet" href="/css/sitter/fsitterMyPet.css">
 	<link rel="stylesheet" href="/css/main.css">
 	
 	<!-- Sweet Alert 플러그인 추가해주기  -->
