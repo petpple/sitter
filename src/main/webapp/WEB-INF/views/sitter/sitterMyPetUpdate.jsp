@@ -32,7 +32,7 @@
 <!-- Template Stylesheet -->
 <link href="/css/style.css" rel="stylesheet">
 
-<link rel="stylesheet" href="/css/member/fsitter/fsitterMyPet.css">
+<!-- <link rel="stylesheet" href="/css/member/fsitter/fsitterMyPet.css"> -->
 <!-- <link rel="stylesheet" href="/css/main.css"> -->
 
 <!-- datepicker -->
@@ -46,7 +46,7 @@
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
 <script type="text/javascript"
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
-<link rel="stylesheet" href="/css/member/fsitter/fsitterMyPet.css">
+<link rel="stylesheet" href="/css/sitter/fsitterMyPet.css">
 <link rel="stylesheet" href="/css/main.css">
 
 
@@ -123,6 +123,57 @@
 						$(".month_picker").datepicker(datepicker_default);
 
 					});
+	
+	$(function() { // 파일 업로드
+	    $('#img_select1').change(function() {
+	       setImageFromFile(this, '#preview1');
+	    });
+	 });
+	 //파일 업로드
+	 function setImageFromFile(input, expression) {
+	    if (input.files && input.files[0]) {
+	       var reader = new FileReader();
+
+	       reader.onload = function(e) {
+	          $(expression).attr('src', e.target.result);
+	       }
+	       reader.readAsDataURL(input.files[0]);
+	    }
+	 }
+	 
+	 
+$("#d_or_cat_id").change(function(){
+	$("#kind").find("option").each(function(){
+			$(this).css("display","inline");
+	});
+
+		$("#kind").find("option").each(function(){
+			if(parseInt(this.value) >= 27 && parseInt(this.value) != 40 && parseInt(this.value) != 100)
+			{
+				$(this).css("display","none");
+				$("#kind").val('100').prop('selected','selected');
+			}
+		});
+		
+	
+});
+$("#d_or_cat_id2").change(function(){
+	$("#kind").find("option").each(function(){
+		$(this).css("display","inline");
+	});
+		$("#kind").find("option").each(function(){
+			if(parseInt(this.value) < 27 || parseInt(this.value) == 40 || parseInt(this.value) == 100)
+			{
+				$(this).css("display","none");
+				$("#kind").val('101').prop('selected','selected');
+			}
+		});
+	
+	
+});
+
+
+
 </script>
 
 <script type="text/javascript">
@@ -170,21 +221,18 @@
 					</div>
 
 					<div class="box_miInfo">
-						<label for="homeTaba">사진 등록</label><br> <input type="file"
-							class="real-upload" accept="image/*" required multiple>
-					</div>
-
-
-
-					<div class="box_miInfo">
-					<form method="post" action="up">
+						 
 						<div class="form-inline">
+		       				<form action="/sitter/petUpdate" method="post" enctype="multipart/form-data">
+		       				
 							<div class="form-group">
+
 								<div class="size_fix">
-									<!-- <img src="/images/sitter/no_img.png" id="preview1" style="width: 100px; height=100px; object-fit: cover;"/> -->
-									<label for="img_select1" class="input-file-button">사진
-										첨부</label> <input type="file" id="img_select1" name="file"
-										style="display: none;" />
+                              <img src="/images/sitter/no_img.png" id="preview1" style="width: 100px; height:100px; object-fit: cover;"/>  
+                              </div>
+                              <label for="img_select1" class="input-file-button" style="margin-left: 10px;">사진 첨부</label> 
+	                          
+	                          <input type="file" id="img_select1" name="file" style="display: none;" />
 
 									<!-- <label for="photo">사진 등록</label><br>
 							<input type="file" class="real-upload" accept="image/*" required multiple> -->
@@ -192,7 +240,7 @@
 								<input type="hidden" value="${Pet.id}" >
 								
 								
-								</div>
+								<br><br>
 								<label for="dogcat">종류</label><br>
 								<div class="radio">
 									<label> 
@@ -202,7 +250,7 @@
 									</label> 
 									<label> 
 										<input type="radio" name="dogcat"
-										id="dogcat" value="2" <%if ("2".equals("2")) {%> checked
+										id="dogcat" value="2" <%if ("1".equals("2")) {%> checked
 										<%}%>/>고양이
 									</label>
 								</div>
@@ -336,11 +384,11 @@
 								</div>
 							</div>
 							<!-- <div class="form-floating"> -->
-						</div>
+						
 						</form>
 					</div>
 
-
+					</div>
 				</div>
 			</div>
 		</div>
