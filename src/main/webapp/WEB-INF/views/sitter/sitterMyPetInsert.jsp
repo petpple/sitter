@@ -212,12 +212,14 @@ $.datepicker.setDefaults($.datepicker.monthpicker);
 
 								<div class="size_fix">
                               <img src="/images/sitter/no_img.png" id="preview1" style="width: 100px; height:100px; object-fit: cover;"/>  
-                              <label for="img_select1" class="input-file-button">사진 첨부</label> 
+                              </div>
+                              
+                              <label for="img_select1" class="input-file-button" style="margin-left: 10px;">사진 첨부</label> 
 	                          <input type="file" id="img_select1" name="file" style="display: none;" />
 		       		
 						<!-- <label for="photo">사진 등록</label><br>
 							<input type="file" class="real-upload" accept="image/*" required multiple> -->
-						</div>
+							<br><br>
 								<label for="d_or_cat_id">종류</label><br>
 
 						<!--<div>
